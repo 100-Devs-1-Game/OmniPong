@@ -34,12 +34,7 @@ jobs:
           lfs: false       # disables automatic LFS download from GitHub 
 
       - name: Configure Git LFS URL
-        run: git config lfs.url https://lfs.microlancer.io/100-Devs-1-Game/OmniPong.git/info/lfs
-
-      - name: Ensure no credentials for public LFS
-        run: |
-          git config --global --unset credential.helper
-          echo -e "protocol=https\nhost=lfs.microlancer.io" | git credential reject
+        run: git config lfs.url https://generic:password123@lfs.microlancer.io/100-Devs-1-Game/OmniPong.git/info/lfs
 
       - name: Pull LFS
         run: git lfs pull
