@@ -33,9 +33,6 @@ jobs:
         with:
           lfs: true
 
-      - name: Checkout LFS objects
-        run: git lfs pull
-
       - name: gdlint and gdformat install
         uses: Scony/godot-gdscript-toolkit@master
        
