@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcim5c11spt43"]
+
+[ext_resource type="Script" uid="uid://babosyfy3owlb" path="res://modules/game_manager/game_manager.gd" id="1_uegwh"]
+[ext_resource type="PackedScene" uid="uid://521ofgp5li4g" path="res://modules/physics/ball.tscn" id="2_ohav7"]
+[ext_resource type="PackedScene" uid="uid://dbki6q751t10x" path="res://modules/physics/paddle.tscn" id="3_fhnv7"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_uegwh")
+ball_scene = ExtResource("2_ohav7")
+paddle_scene = ExtResource("3_fhnv7")
