@@ -31,11 +31,16 @@ signal main_menu_play_button_clicked
 signal main_menu_settings_button_clicked
 #endregion
 
+#region controll
+signal player_move_input(dir: Vector2)
+#endregion
+
 #region player
 signal player_leveled_up(new_level: float)
 #endregion
 
 #region physics
+signal set_ball_velocity(vel: Vector2)
 signal updated_ball_position(pos: Vector2)
 signal updated_ball_velocity(vel: Vector2)
 signal updated_player_paddle_position(pos: Vector2)
@@ -46,4 +51,5 @@ signal updated_opponent_paddle_rotation(rot: float)
 
 #region gamemanager
 signal set_paddle_facing_right(player_paddle: bool, right: bool)
+signal player_scored(player_scored: bool)
 #endregion

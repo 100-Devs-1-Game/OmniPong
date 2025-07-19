@@ -16,12 +16,12 @@ var _data: PlayerData
 
 
 func _init() -> void:
-    _set_up()
+	_set_up()
 
 
 func _set_up() -> void:
-    _data = PlayerData.new()
-    # TODO think about what data should be saved
+	_data = PlayerData.new()
+	# TODO think about what data should be saved
 
 
 #endregion
@@ -33,8 +33,8 @@ func _set_up() -> void:
 
 
 func add_xp(number: float) -> void:
-    _data.current_level_xp += number
-    _try_level_up()
+	_data.current_level_xp += number
+	_try_level_up()
 
 
 #endregion
@@ -43,27 +43,27 @@ func add_xp(number: float) -> void:
 
 
 func _try_level_up() -> void:
-    const MAX_LEVEL_UP_COUNT = 10000
-    var current_count = 0
-    while _can_level_up():
-        _level_up()
-        current_count += 1
-        if current_count >= MAX_LEVEL_UP_COUNT:
-            assert(false, "Exp is probably glitched")
-            break
+	const MAX_LEVEL_UP_COUNT = 10000
+	var current_count = 0
+	while _can_level_up():
+		_level_up()
+		current_count += 1
+		if current_count >= MAX_LEVEL_UP_COUNT:
+			assert(false, "Exp is probably glitched")
+			break
 
 
 func _level_up() -> void:
-    _data.level += 1
-    _data.current_level_xp -= _get_xp_to_level_up(_data.level)
-    EventBus.played_leved_up.emit()
+	_data.level += 1
+	_data.current_level_xp -= _get_xp_to_level_up(_data.level)
+	EventBus.played_leved_up.emit()
 
 
 func _can_level_up() -> bool:
-    return _data.current_level_xp <= _get_xp_to_level_up(_data.level)
+	return _data.current_level_xp <= _get_xp_to_level_up(_data.level)
 
 
 func _get_xp_to_level_up(level: int) -> float:
-    return level * 10
+	return level * 10
 
 #endregion

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://82ylt6hfippm"]
+[gd_scene load_steps=3 format=3 uid="uid://82ylt6hfippm"]
 
 [ext_resource type="Script" uid="uid://cmmynudkxdhlo" path="res://modules/UI/main_menu/main_menu_page.gd" id="1_f7l61"]
+[ext_resource type="PackedScene" uid="uid://bcim5c11spt43" path="res://modules/game_manager/game_manager.tscn" id="2_pgu6p"]
 
 [node name="Main-Menu-Page" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f7l61")
+game_scene = ExtResource("2_pgu6p")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
