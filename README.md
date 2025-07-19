@@ -20,9 +20,9 @@ If you choose not to use Github Desktop:
 - Run the `git lfs install` command anywhere
 - Keep using git like usual
 
-## For Art and Sound Contributors
+## Our new backend
 
-Media files (such as .png, .wav, .mp3 files, etc.) are handled in a special way. After adding the files to the project and committing them, when you push (aka upload) your files to GitHub, they will be stored on an special "large file" server. When this happens, the file server may prompt you to provide credentials.
+The file server may prompt you to provide credentials now, if you upload anything to this Repository.
 
 <img width="461" height="358" alt="image" src="https://github.com/user-attachments/assets/0949377f-4feb-4d35-a3ed-942a1954d103" />
 
