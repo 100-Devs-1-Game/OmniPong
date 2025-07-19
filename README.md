@@ -20,6 +20,14 @@ If you choose not to use Github Desktop:
 - Run the `git lfs install` command anywhere
 - Keep using git like usual
 
+## Our new backend
+
+The file server may prompt you to provide credentials now, if you upload anything to this Repository.
+
+<img width="461" height="358" alt="image" src="https://github.com/user-attachments/assets/0949377f-4feb-4d35-a3ed-942a1954d103" />
+
+Please use the username: `upload` and password: `pass1234` when this prompt appears.
+
 ### Guides:
 
 :closed_book: [Beginner Guide to Godot and Git](https://blog.paulhartman.dev/100-dev-setup)
@@ -32,7 +40,7 @@ If you choose not to use Github Desktop:
 
 - We are using a global Autoload Event/Signal Bus where all `signals` that aren't purely for intra-module communication will reside. If possible try to design your modules in away that they only communicate through those global signals with the outside.
 - We are using Formatter and Linter plugins that will automatically re-format your code or point out potential Errors when you save your Scripts. This may cause some confusion and also trigger the "Newer Files on Disk" Dialog in the Godot Editor, where you can choose "Reload from Disk"
-- It's against convention to use `_varialble` for variables that *are not* unused. Use `p_variable` instead if you run into issues, eg. in `_init()`
+- It's against convention to use `_variable` for variables that *are not* unused. Use `p_variable` instead if you run into issues, eg. in `_init()`
 - We discourage the use of `await`, `set_deferred()` and `call_deferred()` unless you know exactly what you are doing and what the implications are. Best to leave a comment above that line to inform Code Reviewers why you think it's safe to use in your case.
 
 ### Core Addons
