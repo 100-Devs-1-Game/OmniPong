@@ -39,7 +39,18 @@ jobs:
 
       - name: Run gdformat cheks
         run: gdformat --check src/
+<<<<<<< HEAD
+      
+      # Disabled - https://discord.com/channels/1393033395298373643/1396178565778641036/1396192522736242769
+      # - name: Run gdlint checks
+      #  run: gdlint src/
+ 
+=======
+
       - name: Run gdlint checks
+        run: gdlint src/
+
+>>>>>>> 94829fe (Added pre-commit config and resulting fixes)
       - name: unit tests with godot gut
         if: ${{ !env.is_release }}
         uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
