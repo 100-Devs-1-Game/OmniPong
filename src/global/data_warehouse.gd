@@ -28,7 +28,7 @@ func _set_ready_variables() -> void:
 #region ======================== PUBLIC METHODS ================================
 
 
-func get_plaeyr_data_holder() -> PlayerDataHolder:
+func get_player_data_holder() -> PlayerDataHolder:
     assert(_player_data_holder != null, "Player data holder missing")
     return _player_data_holder
 
