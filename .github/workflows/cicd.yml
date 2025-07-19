@@ -30,8 +30,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v4
-        with:
-          lfs: true
 
       - name: Checkout LFS objects
         run: git lfs pull
