@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://hj5mffaue8w8"]
+
+[ext_resource type="Script" uid="uid://dy6fvb0nv6np4" path="res://modules/physics/tests/move_paddle/move_paddle_test.gd" id="1_y4gmd"]
+[ext_resource type="PackedScene" uid="uid://dbki6q751t10x" path="res://modules/physics/paddle.tscn" id="2_s71iu"]
+
+[node name="Move Paddle Test" type="Node2D"]
+script = ExtResource("1_y4gmd")
+
+[node name="Paddle" parent="." instance=ExtResource("2_s71iu")]
