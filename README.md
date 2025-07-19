@@ -26,7 +26,7 @@ The file server may prompt you to provide credentials now, if you upload anythin
 
 <img width="461" height="358" alt="image" src="https://github.com/user-attachments/assets/0949377f-4feb-4d35-a3ed-942a1954d103" />
 
-Please use the username: `upload` and password: `pass1234` when this prompt appears.
+Please check the discord server for the required credentials, this is not your github login
 
 ### Guides:
 
