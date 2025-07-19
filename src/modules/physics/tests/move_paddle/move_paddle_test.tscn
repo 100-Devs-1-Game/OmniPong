@@ -7,3 +7,4 @@
 script = ExtResource("1_y4gmd")
 
 [node name="Paddle" parent="." instance=ExtResource("2_s71iu")]
+position = Vector2(445, 334)
