@@ -6,6 +6,10 @@ signal picked_up
 @export var collider_size: Vector2 = Vector2(25, 25)
 
 
+func _init(p_powerup_resource: Powerup = null) -> void:
+    powerup_resource = p_powerup_resource
+
+
 func _ready() -> void:
     assert(powerup_resource, "Powerup must be set.")
 
