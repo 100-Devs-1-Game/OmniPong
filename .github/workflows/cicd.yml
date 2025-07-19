@@ -40,8 +40,9 @@ jobs:
       - name: Run gdformat cheks
         run: gdformat --check src/
       
-      - name: Run gdlint checks
-        run: gdlint src/
+      # Disabled - https://discord.com/channels/1393033395298373643/1396178565778641036/1396192522736242769
+      # - name: Run gdlint checks
+      #  run: gdlint src/
  
       - name: unit tests with godot gut
         if: ${{ !env.is_release }}

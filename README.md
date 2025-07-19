@@ -47,7 +47,6 @@ Please use the username: `upload` and password: `pass1234` when this prompt appe
 
 - [GuT](https://github.com/bitwes/Gut): For Unit testing
 - [DebugDraw3d](https://github.com/DmitriySalnikov/godot_debug_draw_3d): It's good
-- [GDLinter](https://github.com/el-falso/gdlinter/): Linter
 - [Format-On-Save](https://github.com/ryan-haskell/gdformat-on-save): Auto-formatting
 - [Godot-Logger](https://github.com/KOBUGE-Games/godot-logger): Logs
 - [FMod-extension](https://github.com/utopia-rise/fmod-gdextension): Audio extension
