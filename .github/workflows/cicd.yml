@@ -36,6 +36,11 @@ jobs:
       - name: Configure Git LFS URL
         run: git config lfs.url https://lfs.microlancer.io/100-Devs-1-Game/OmniPong.git/info/lfs
 
+      - name: Ensure no credentials for public LFS
+        run: |
+          git config --global --unset credential.helper
+          echo "protocol=https\nhost=lfs.microlancer.io" | git credential reject
+
       - name: Pull LFS
         run: git lfs pull
 
