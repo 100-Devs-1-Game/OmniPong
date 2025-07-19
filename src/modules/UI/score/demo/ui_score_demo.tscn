@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://do8ejfcq3uxqm"]
+
+[ext_resource type="Script" uid="uid://bhl7gdcpiwlcp" path="res://modules/ui/score/demo/ui_score_demo.gd" id="1_k7lcg"]
+[ext_resource type="PackedScene" uid="uid://ceqncinkjaief" path="res://modules/ui/score/score.tscn" id="1_qx3na"]
+
+[node name="UiScoreDemo" type="Node2D"]
+script = ExtResource("1_k7lcg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 320)
+
+[node name="Score" parent="." instance=ExtResource("1_qx3na")]
+offset_left = 578.085
+offset_top = 42.69
+offset_right = 578.085
+offset_bottom = 42.69
+scale = Vector2(0.265, 0.265)
