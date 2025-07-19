@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceqncinkjaief"]
+
+[ext_resource type="Script" uid="uid://bn5pqeb3nqvrw" path="res://modules/ui/score/score.gd" id="1_t1x8i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhp1n"]
+font_size = 280
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_t1x8i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(575.925, 320.42)
+alignment = 1
+
+[node name="LeftScoreLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_lhp1n")
+horizontal_alignment = 2
+
+[node name="Point" type="Control" parent="HBoxContainer/LeftScoreLabel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -93.0
+offset_right = -40.0
+offset_bottom = -53.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Spacer" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = " "
+label_settings = SubResource("LabelSettings_lhp1n")
+
+[node name="RightScoreLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_lhp1n")
+
+[node name="Point" type="Control" parent="HBoxContainer/RightScoreLabel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -93.0
+offset_right = 120.0
+offset_bottom = -53.0
+grow_vertical = 0
