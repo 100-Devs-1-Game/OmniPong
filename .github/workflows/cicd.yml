@@ -39,7 +39,7 @@ jobs:
       - name: Ensure no credentials for public LFS
         run: |
           git config --global --unset credential.helper
-          echo "protocol=https\nhost=lfs.microlancer.io" | git credential reject
+          echo -e "protocol=https\nhost=lfs.microlancer.io" | git credential reject
 
       - name: Pull LFS
         run: git lfs pull
