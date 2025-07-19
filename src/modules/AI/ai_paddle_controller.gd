@@ -30,18 +30,18 @@ func on_ai_paddle_rotation_update(rot: float):
     current_ai_paddle_rot = rot
 
 
-func get_movement_direction() -> float:
+func get_vertical_input() -> float:
     var pos_difference: Vector2 = current_ai_paddle_pos - current_ball_pos
-    var unit_distance: float = pos_difference.y / current_ball_vel.y
+    var unit_distance: float = pos_difference.x / current_ball_vel.x
     if unit_distance < 0:
         return 0.0
-    var target_x: float = current_ball_pos.x + current_ball_vel.x * unit_distance
-    return sign(target_x - current_ai_paddle_pos.x)
+    var target_y: float = current_ball_pos.y + current_ball_vel.y * unit_distance
+    return sign(target_y - current_ai_paddle_pos.y)
 
 
-func get_tilt_direction() -> float:
+func get_tilt_input() -> float:
     return 0.0
 
 
-func get_look_target() -> Vector2:
-    return current_ball_pos
+func get_look_vector(_from_position: Vector2) -> Vector2:
+    return (current_ball_pos - _from_position).normalized()
