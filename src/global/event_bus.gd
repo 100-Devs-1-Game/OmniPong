@@ -14,7 +14,9 @@ extends Node
 #
 # @param left:int Score for the left player.
 # @param right:int Score for the right player.
-# @param global_score_position:Vector2 (optional) The viewport position to start the score animation from. Use `Vector2.INF` to skip the animation.
+# @param global_score_position:Vector2 (optional) The viewport position
+#        to start the score animation from. Use `Vector2.INF` to skip
+#        the animation.
 signal ui_set_score(left: int, right: int, pos: Vector2)
 
 #Hide the Score UI
