@@ -31,6 +31,10 @@ signal main_menu_play_button_clicked
 signal main_menu_settings_button_clicked
 #endregion
 
+#region player
+signal player_leveled_up(new_level: float)
+#endregion
+
 #region physics
 signal updated_ball_position(pos: Vector2)
 signal updated_ball_velocity(vel: Vector2)
