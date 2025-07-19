@@ -1,26 +1,40 @@
 class_name Paddle
 extends Node2D
 
+@export var paddle_controller_script: Script
+
 @export var max_move_speed: float = 100.0
 @export var max_rotation_speed: float = 100.0
+@export var acceleration: float = 100.0
 
-var current_direction: float
+var controller: PaddleController
+var velocity: float
 
-
-func _ready():
-	# TODO wait for signal name
-	#EventBus.player_move_input.connect(on_move)
-	#EventBus.player_rotation_input.connect(on_rotate)
-	pass
-
-
-func on_move(direction: float):
-	current_direction = direction
-
-
-func on_look_at(towards: Vector2):
-	look_at(towards)
+var is_player := false:
+	set(b):
+		assert(is_inside_tree())
+		is_player = b
+		if is_player:
+			initialize_player_controller(InputPaddleController.ControlScheme.KEYBOARD_AND_MOUSE)
 
 
 func _physics_process(delta: float) -> void:
-	position.y += current_direction * max_move_speed * delta
+	velocity = move_toward(
+		velocity, controller.get_vertical_input() * get_current_speed(), acceleration * delta
+	)
+	position.y += velocity * delta
+	var look_vec := controller.get_look_vector(position)
+
+	look_at(position + look_vec)
+
+
+func get_current_speed() -> float:
+	return max_move_speed
+
+
+func initialize_player_controller(scheme: InputPaddleController.ControlScheme):
+	var node = Node.new()
+	node.set_script(paddle_controller_script)
+	add_child(node)
+	controller = node as InputPaddleController
+	controller.control_scheme = InputPaddleController.ControlScheme.KEYBOARD_AND_MOUSE
