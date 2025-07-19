@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=6 format=3 uid="uid://ba75c4p8ngrid"]
+
+[ext_resource type="Script" uid="uid://dwayqr5vvtmex" path="res://modules/powerup_system/powerup.gd" id="1_q5bvd"]
+[ext_resource type="Script" uid="uid://tvxig6akjiqd" path="res://modules/powerup_system/powerup_effect.gd" id="1_sp4yf"]
+[ext_resource type="Script" uid="uid://bhj2mhf52im82" path="res://modules/powerup_system/effects/debug_effect.gd" id="2_n6p8e"]
+
+[sub_resource type="Resource" id="Resource_vlugl"]
+script = ExtResource("2_n6p8e")
+on_apply_message = "Hello world!"
+metadata/_custom_type_script = "uid://bhj2mhf52im82"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n6p8e"]
+size = Vector2(16, 16)
+
+[resource]
+script = ExtResource("1_q5bvd")
+powerup_identifier = &"debug"
+powerup_display_name = &"Debug"
+powerup_texture = SubResource("PlaceholderTexture2D_n6p8e")
+powerup_type = 0
+powerup_effects = Array[ExtResource("1_sp4yf")]([SubResource("Resource_vlugl")])
+metadata/_custom_type_script = "uid://dwayqr5vvtmex"
