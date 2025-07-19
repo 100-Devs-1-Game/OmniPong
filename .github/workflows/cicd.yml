@@ -36,8 +36,14 @@ jobs:
       - name: Configure Git LFS URL
         run: git config lfs.url https://generic:password123@lfs.microlancer.io/100-Devs-1-Game/OmniPong.git/info/lfs
 
-      - name: Pull LFS
-        run: git lfs pull
+      - name: Debug Git LFS
+        env:
+          GIT_TRACE: 1
+          GIT_CURL_VERBOSE: 1
+          GIT_LFS_TRACE: 1
+        run: |
+          git lfs env
+          git lfs pull
 
       - name: gdlint and gdformat install
         uses: Scony/godot-gdscript-toolkit@master
