@@ -9,7 +9,7 @@ Required Software:
 ## For Programmers
 [GDToolkit](https://github.com/Scony/godot-gdscript-toolkit?tab=readme-ov-file#installation)  ( Requires Python )
 - Install Python
-- Use Command Line `pip3 install "gdtoolkit==4.*"`
+- Use Command Line `pip3 install "gdtoolkit==4.3.4"` (or higher)
 
 Recommended software (if you aren't sure what to pick):
 - Editor: [VSCode](https://code.visualstudio.com/) full IDE with advanced functionality compared to the Godot Editor, but needs to be configured properly
