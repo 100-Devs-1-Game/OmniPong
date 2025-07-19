@@ -1,7 +1,9 @@
 extends Node2D
-var r:int = 0
-var l:int = 0
-var h:bool = false
+var r: int = 0
+var l: int = 0
+var h: bool = false
+
+
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_MIDDLE:
@@ -12,9 +14,8 @@ func _input(event):
 			h = !h
 			return
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			l+=1
+			l += 1
 		if event.button_index == MOUSE_BUTTON_RIGHT:
-			r+=1
+			r += 1
 		var mouse_pos = get_viewport().get_mouse_position()
-		EventBus.emit_signal("ui_set_score",l,r,mouse_pos)
-
+		EventBus.emit_signal("ui_set_score", l, r, mouse_pos)
