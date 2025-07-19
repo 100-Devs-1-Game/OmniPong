@@ -36,9 +36,6 @@ jobs:
       - name: Configure Git LFS URL
         run: git config lfs.url https://generic:password123@lfs.microlancer.io/100-Devs-1-Game/OmniPong.git/info/lfs
 
-      - name: Disable credential helper
-        run: git config --global --unset credential.helper
-
       - name: Pull LFS
         run: git lfs pull
 
