@@ -1,1 +1,0 @@
-When we create the real dialog, we can delete example.dch and example.dtl.
