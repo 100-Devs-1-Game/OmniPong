@@ -20,3 +20,7 @@ func _physics_process(delta: float) -> void:
 
     EventBus.updated_ball_velocity.emit(velocity)
     EventBus.updated_ball_position.emit(position)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+    EventBus.ball_left_screen.emit()
