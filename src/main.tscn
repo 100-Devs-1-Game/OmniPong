@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://j5fhhicrymj4"]
+
+[ext_resource type="PackedScene" uid="uid://82ylt6hfippm" path="res://modules/UI/main_menu/main_menu_page.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bcim5c11spt43" path="res://modules/game_manager/game_manager.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Node"]
+
+[node name="Main-Menu-Page" parent="." instance=ExtResource("1_ig7tw")]
+game_scene = ExtResource("2_0xm2m")
