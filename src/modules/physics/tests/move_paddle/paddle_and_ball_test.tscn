@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://hj5mffaue8w8"]
+[gd_scene load_steps=4 format=3 uid="uid://hj5mffaue8w8"]
 
 [ext_resource type="Script" uid="uid://dy6fvb0nv6np4" path="res://modules/physics/tests/move_paddle/paddle_and_ball_test.gd" id="1_4kuos"]
 [ext_resource type="PackedScene" uid="uid://dbki6q751t10x" path="res://modules/physics/paddle.tscn" id="2_6arv2"]
+[ext_resource type="PackedScene" uid="uid://521ofgp5li4g" path="res://modules/physics/ball.tscn" id="3_6arv2"]
 
 [node name="Paddle And Ball Test" type="Node2D"]
 script = ExtResource("1_4kuos")
 
 [node name="Paddle" parent="." instance=ExtResource("2_6arv2")]
-position = Vector2(445, 334)
+position = Vector2(40, 336)
+
+[node name="Ball" parent="." instance=ExtResource("3_6arv2")]
+position = Vector2(524, 345)
