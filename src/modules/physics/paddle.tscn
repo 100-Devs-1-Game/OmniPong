@@ -10,6 +10,8 @@ size = Vector2(20, 200)
 [node name="Paddle" type="CharacterBody2D"]
 script = ExtResource("1_0ukoy")
 paddle_controller_script = ExtResource("2_dswwi")
+max_move_speed = 150.0
+acceleration = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, 1.42109e-13)
