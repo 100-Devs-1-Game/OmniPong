@@ -17,10 +17,12 @@ func _on_play_button_down():
     print("Play button on main menu clicked")
     scene_change(game_scene)
 
+
 func _on_campaign_button_down():
     EventBus.main_menu_campaign_play_button_clicked.emit()
     print("Campaign button on main menu clicked")
     scene_change(campaign_scene)
+
 
 func _on_settings_button_down():
     EventBus.main_menu_settings_button_clicked.emit()

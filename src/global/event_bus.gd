@@ -58,7 +58,11 @@ signal set_paddle_facing_right(player_paddle: bool, right: bool)
 #endregion
 
 #region campaign
-signal campaign_levels_loaded()
-signal campaign_state_changed(data: LevelData, old: CampaignManager.CAMPAIGN_STATE, new: CampaignManager.CAMPAIGN_STATE)
-signal campaign_level_state_changed(data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE)
+signal campaign_levels_loaded
+signal campaign_state_changed(
+    data: LevelData, old: CampaignManager.CAMPAIGN_STATE, new: CampaignManager.CAMPAIGN_STATE
+)
+signal campaign_level_state_changed(
+    data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE
+)
 #endregion
