@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceqncinkjaief"]
+[gd_scene load_steps=3 format=3 uid="uid://ceqncinkjaief"]
 
 [ext_resource type="Script" uid="uid://bn5pqeb3nqvrw" path="res://modules/UI/score/score.gd" id="1_t1x8i"]
-[ext_resource type="AudioStream" uid="uid://bhiwjj2yhmsqj" path="res://assets/sound_effects/score_increase.wav" id="2_kppn5"]
-[ext_resource type="AudioStream" uid="uid://butp5foog0qas" path="res://assets/sound_effects/SOUND_000013.wav" id="3_bla5f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lhp1n"]
 font_size = 280
@@ -71,9 +69,3 @@ offset_top = -93.0
 offset_right = 120.0
 offset_bottom = -53.0
 grow_vertical = 0
-
-[node name="score_increase" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_kppn5")
-
-[node name="score_sweep" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_bla5f")

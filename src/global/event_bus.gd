@@ -18,6 +18,8 @@ extends Node
 #        to start the score animation from. Use `Vector2.INF` to skip
 #        the animation.
 signal ui_set_score(left: int, right: int, pos: Vector2)
+signal score_shake
+signal score_trail_animation_start
 
 #Hide the Score UI
 signal ui_hide_score

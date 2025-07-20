@@ -69,8 +69,8 @@ func _play_score_animation(
     effect_scene.left = left
     effect_scene.right = right
     effect_scene.connect("movement_finished", Callable(self, "_on_effect_done"))
-    $score_sweep.play()
     # Start the movement
+    EventBus.emit_signal("score_trail_animation_start")
     effect_scene.start_movement(from_position, to_position, 0.5)
 
 
@@ -83,7 +83,7 @@ func _play_secondary_effect() -> void:
     var tween := get_tree().create_tween()
     var shake_count = 3  # number of shakes
     if shake_left or shake_right:
-        $score_increase.play()
+        EventBus.emit_signal("score_shake")
     for i in range(shake_count):
         if shake_left:
             move_by_random_offset($HBoxContainer/LeftScoreLabel, tween)
