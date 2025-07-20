@@ -43,10 +43,10 @@ func _physics_process(delta: float) -> void:
     look_at(position + look_vec)
     if is_player:
         EventBus.updated_player_paddle_position.emit(position)
-        EventBus.updated_player_paddle_rotation.emit(look_vec)
+        EventBus.updated_player_paddle_rotation.emit(rotation)
     else:
         EventBus.updated_opponent_paddle_position.emit(position)
-        EventBus.updated_opponent_paddle_rotation.emit(look_vec)
+        EventBus.updated_opponent_paddle_rotation.emit(rotation)
 
 
 func get_current_speed() -> float:
