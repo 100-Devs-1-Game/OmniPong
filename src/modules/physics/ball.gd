@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 
     if motion.y < 0 and new_position.y < wall_margin:
         velocity = velocity.bounce(Vector2.DOWN)
-    if motion.y > 0 and new_position.y > get_viewport().get_visible_rect().size.y + wall_margin:
+    if motion.y > 0 and new_position.y > get_viewport().get_visible_rect().size.y - wall_margin:
         velocity = velocity.bounce(Vector2.UP)
 
     var collision := move_and_collide(motion)
