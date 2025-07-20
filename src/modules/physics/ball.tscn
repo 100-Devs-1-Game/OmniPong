@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://521ofgp5li4g"]
 
 [ext_resource type="Script" uid="uid://ca6numq5vl55c" path="res://modules/physics/ball.gd" id="1_r30hw"]
-[ext_resource type="Texture2D" uid="uid://bhvk108rnfbec" path="res://modules/physics/assets/ball.png" id="2_scn7o"]
+[ext_resource type="Texture2D" uid="uid://byfcj58x8pnfg" path="res://assets/textures/ball_01_32x32.webp" id="2_scn7o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_scn7o"]
-radius = 35.0
+radius = 15.0
 
 [node name="Ball" type="CharacterBody2D"]
 collision_layer = 2
@@ -12,7 +12,6 @@ script = ExtResource("1_r30hw")
 wall_margin = 30.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_scn7o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
