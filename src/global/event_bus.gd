@@ -42,4 +42,5 @@ signal updated_player_paddle_position(pos: Vector2)
 signal updated_opponent_paddle_position(pos: Vector2)
 signal updated_player_paddle_rotation(rot: float)
 signal updated_opponent_paddle_rotation(rot: float)
+signal ball_left_screen
 #endregion
