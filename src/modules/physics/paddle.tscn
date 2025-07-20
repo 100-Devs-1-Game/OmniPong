@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bxmgsre13sgn" path="res://modules/physics/paddle.gd" id="1_0ukoy"]
 [ext_resource type="Script" uid="uid://b7gddjlrym5qj" path="res://modules/paddle_controller/player_paddle_controller.gd" id="2_dswwi"]
-[ext_resource type="Texture2D" uid="uid://dx4ieb2roc48f" path="res://modules/physics/assets/paddle.png" id="2_wruu2"]
+[ext_resource type="Texture2D" uid="uid://tbtyr87sedre" path="res://assets/textures/gold_paddle.webp" id="3_dswwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wruu2"]
-size = Vector2(20, 200)
+size = Vector2(28, 280)
 
 [node name="Paddle" type="CharacterBody2D"]
 script = ExtResource("1_0ukoy")
@@ -15,10 +15,8 @@ acceleration = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, 1.42109e-13)
-rotation = 1.5708
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_wruu2")
+texture = ExtResource("3_dswwi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(41, 0)
+position = Vector2(45, 0)
 shape = SubResource("RectangleShape2D_wruu2")
