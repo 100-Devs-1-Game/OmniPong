@@ -4,7 +4,7 @@ extends Node2D
 @export var paddle_controller_script: Script
 
 @export var max_move_speed: float = 100.0
-@export var max_rotation_speed: float = 100.0
+@export var max_rotation_speed: float = 0.5
 @export var acceleration: float = 100.0
 @export var vertical_wall_margin: float = 100.0
 
@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 
     var look_vec := controller.get_look_vector(position)
 
-    look_at(position + look_vec)
+    rotation = rotate_toward(rotation, look_vec.angle(), delta * max_rotation_speed)
     if is_player:
         EventBus.updated_player_paddle_position.emit(position)
         EventBus.updated_player_paddle_rotation.emit(rotation)
