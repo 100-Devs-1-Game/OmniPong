@@ -6,6 +6,7 @@ extends Node2D
 @export var max_move_speed: float = 100.0
 @export var max_rotation_speed: float = 100.0
 @export var acceleration: float = 100.0
+@export var vertical_wall_margin: float = 100.0
 
 var controller: PaddleController
 var velocity: float
@@ -22,7 +23,17 @@ func _physics_process(delta: float) -> void:
     velocity = move_toward(
         velocity, controller.get_vertical_input() * get_current_speed(), acceleration * delta
     )
-    position.y += velocity * delta
+    var motion: float = velocity * delta
+    var new_position_y: float = position.y
+
+    if motion < 0 and new_position_y > vertical_wall_margin:
+        position.y += motion
+    elif (
+        motion > 0
+        and new_position_y < get_viewport().get_visible_rect().size.y - vertical_wall_margin
+    ):
+        position.y += motion
+
     var look_vec := controller.get_look_vector(position)
 
     look_at(position + look_vec)
