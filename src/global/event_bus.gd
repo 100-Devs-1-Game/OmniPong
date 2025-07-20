@@ -44,4 +44,14 @@ signal updated_player_paddle_position(pos: Vector2)
 signal updated_opponent_paddle_position(pos: Vector2)
 signal updated_player_paddle_rotation(rot: float)
 signal updated_opponent_paddle_rotation(rot: float)
+signal ball_exited_screen(right_side: bool)
+#endregion
+
+#region gamemanager
+signal set_ball_position(pos: Vector2)
+signal set_ball_velocity(vel: Vector2)
+#endregion
+
+#region gamemanager
+signal set_paddle_facing_right(player_paddle: bool, right: bool)
 #endregion
