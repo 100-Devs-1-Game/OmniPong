@@ -2,6 +2,7 @@ class_name Ball
 extends CharacterBody2D
 
 @export var wall_margin: float = 50.0
+@export var angle_speed_ratio: float = 1.0
 
 
 func _ready() -> void:
@@ -11,6 +12,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
     var motion: Vector2 = velocity * delta
+    motion *= get_speed_ratio()
+
     var new_position = position + motion
 
     if motion.y < 0 and new_position.y < wall_margin:
@@ -27,6 +30,10 @@ func _physics_process(delta: float) -> void:
 
     EventBus.updated_ball_velocity.emit(velocity)
     EventBus.updated_ball_position.emit(position)
+
+
+func get_speed_ratio() -> float:
+    return 1.0 / abs(pow(Vector2.RIGHT.dot(velocity.normalized()), angle_speed_ratio))
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
