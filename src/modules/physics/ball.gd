@@ -5,7 +5,7 @@ var velocity: Vector2
 
 
 func _physics_process(delta: float) -> void:
-	position += velocity * delta
+    position += velocity * delta
 
-	EventBus.updated_ball_velocity.emit(velocity)
-	EventBus.updated_ball_position.emit(position)
+    EventBus.updated_ball_velocity.emit(velocity)
+    EventBus.updated_ball_position.emit(position)
