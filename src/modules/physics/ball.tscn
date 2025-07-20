@@ -9,6 +9,7 @@ radius = 35.0
 [node name="Ball" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_r30hw")
+wall_margin = 30.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
