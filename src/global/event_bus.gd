@@ -49,3 +49,7 @@ signal ball_exited_screen(right_side: bool)
 signal set_ball_position(pos: Vector2)
 signal set_ball_velocity(vel: Vector2)
 #endregion
+
+#region gamemanager
+signal set_paddle_facing_right(player_paddle: bool, right: bool)
+#endregion
