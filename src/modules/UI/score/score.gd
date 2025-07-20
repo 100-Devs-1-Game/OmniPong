@@ -4,6 +4,8 @@ var last_score_left: int = 0
 var last_score_right: int = 0
 var pos_left: Vector2
 var pos_right: Vector2
+var shake_left: bool = false
+var shake_right: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,8 +31,10 @@ func ui_set_score(left: int, right: int, global_score_position: Vector2 = Vector
     var targets: Array = []
     if left != last_score_left:
         targets.append(($HBoxContainer/LeftScoreLabel/Point as Control).global_position)
+        shake_left = true
     if right != last_score_right:
         targets.append(($HBoxContainer/RightScoreLabel/Point as Control).global_position)
+        shake_right = true
     last_score_left = left
     last_score_right = right
     # Early return if both scores are zero (game start or reset)
@@ -65,6 +69,7 @@ func _play_score_animation(
     effect_scene.left = left
     effect_scene.right = right
     effect_scene.connect("movement_finished", Callable(self, "_on_effect_done"))
+    $score_sweep.play()
     # Start the movement
     effect_scene.start_movement(from_position, to_position, 0.5)
 
@@ -75,4 +80,34 @@ func _on_effect_done(left: int, right: int):
 
 
 func _play_secondary_effect() -> void:
-    pass
+    var tween := get_tree().create_tween()
+    var shake_count = 3  # number of shakes
+    if shake_left or shake_right:
+        $score_increase.play()
+    for i in range(shake_count):
+        if shake_left:
+            move_by_random_offset($HBoxContainer/LeftScoreLabel, tween)
+        if shake_right:
+            move_by_random_offset($HBoxContainer/RightScoreLabel, tween)
+    tween.play()
+    shake_left = false
+    shake_right = false
+
+
+func move_by_random_offset(label: Label, tween) -> void:
+    var original_pos = label.position
+    var intensity = 20  # pixels to shake
+    var duration = 0.07  # how long each shake lasts
+    var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
+    (
+        tween
+        . tween_property(label, "position", original_pos + offset, duration)
+        . set_trans(Tween.TRANS_SINE)
+        . set_ease(Tween.EASE_IN_OUT)
+    )
+    (
+        tween
+        . tween_property(label, "position", original_pos, duration)
+        . set_trans(Tween.TRANS_SINE)
+        . set_ease(Tween.EASE_IN_OUT)
+    )
