@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ccek170isl3hv"]
 
-[ext_resource type="Script" uid="uid://xg4rwkqwb21i" path="res://modules/ui/score/score_effect.gd" id="1_tsniq"]
+[ext_resource type="Script" uid="uid://xg4rwkqwb21i" path="res://modules/UI/score/score_effect.gd" id="1_tsniq"]
 
 [sub_resource type="Gradient" id="Gradient_t1x8i"]
 offsets = PackedFloat32Array(0, 0.614719)

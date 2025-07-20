@@ -1,9 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ceqncinkjaief"]
 
-[ext_resource type="Script" uid="uid://bn5pqeb3nqvrw" path="res://modules/ui/score/score.gd" id="1_t1x8i"]
+[ext_resource type="Script" uid="uid://bn5pqeb3nqvrw" path="res://modules/UI/score/score.gd" id="1_t1x8i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lhp1n"]
 font_size = 280
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Score" type="Control"]
 layout_mode = 3
@@ -48,7 +50,7 @@ grow_vertical = 0
 
 [node name="Spacer" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-text = " "
+text = "   "
 label_settings = SubResource("LabelSettings_lhp1n")
 
 [node name="RightScoreLabel" type="Label" parent="HBoxContainer"]
