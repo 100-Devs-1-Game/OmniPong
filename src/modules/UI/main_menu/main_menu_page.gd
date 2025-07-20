@@ -1,12 +1,14 @@
 extends Control
 
 @export var game_scene: PackedScene
+@export var campaign_scene: PackedScene
 @export var setting_scene: PackedScene
 
 
 # connect to signals for button presses
 func _ready() -> void:
     $CenterContainer/VBoxContainer/PlayButton.connect("pressed", _on_play_button_down)
+    $CenterContainer/VBoxContainer/PlayCampaignButton.connect("pressed", _on_campaign_button_down)
     $CenterContainer/VBoxContainer/SettingsButton.connect("pressed", _on_settings_button_down)
 
 
@@ -14,6 +16,12 @@ func _on_play_button_down():
     EventBus.main_menu_play_button_clicked.emit()
     print("Play button on main menu clicked")
     scene_change(game_scene)
+
+
+func _on_campaign_button_down():
+    EventBus.main_menu_campaign_play_button_clicked.emit()
+    print("Campaign button on main menu clicked")
+    scene_change(campaign_scene)
 
 
 func _on_settings_button_down():

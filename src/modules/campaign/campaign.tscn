@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy8y2pagi1xbx"]
+
+[ext_resource type="PackedScene" uid="uid://bcim5c11spt43" path="res://modules/game_manager/game_manager.tscn" id="1_aygjl"]
+[ext_resource type="Script" uid="uid://hb732yq07a5x" path="res://modules/campaign/campaign_manager.gd" id="1_n5je1"]
+[ext_resource type="Resource" uid="uid://upv55v7u0rux" path="res://modules/campaign/data/one.tres" id="2_jatdj"]
+
+[node name="Campaign" type="Node2D"]
+
+[node name="GameManager" parent="." instance=ExtResource("1_aygjl")]
+
+[node name="CampaignManager" type="Node2D" parent="." node_paths=PackedStringArray("level_container")]
+script = ExtResource("1_n5je1")
+first_level = ExtResource("2_jatdj")
+level_container = NodePath("../LevelContainer")
+autostart = true
+
+[node name="LevelContainer" type="Node2D" parent="."]
