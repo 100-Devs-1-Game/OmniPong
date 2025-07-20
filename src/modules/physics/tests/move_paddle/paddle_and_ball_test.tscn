@@ -6,6 +6,7 @@
 
 [node name="Paddle And Ball Test" type="Node2D"]
 script = ExtResource("1_4kuos")
+initial_ball_velocity = null
 
 [node name="Paddle" parent="." instance=ExtResource("2_6arv2")]
 position = Vector2(40, 336)
