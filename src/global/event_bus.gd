@@ -30,6 +30,7 @@ signal ui_show_score
 
 #region main_menu
 signal main_menu_play_button_clicked
+signal main_menu_campaign_play_button_clicked
 signal main_menu_settings_button_clicked
 #endregion
 
@@ -54,4 +55,10 @@ signal set_ball_velocity(vel: Vector2)
 
 #region gamemanager
 signal set_paddle_facing_right(player_paddle: bool, right: bool)
+#endregion
+
+#region campaign
+signal campaign_levels_loaded()
+signal campaign_state_changed(data: LevelData, old: CampaignManager.CAMPAIGN_STATE, new: CampaignManager.CAMPAIGN_STATE)
+signal campaign_level_state_changed(data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE)
 #endregion
