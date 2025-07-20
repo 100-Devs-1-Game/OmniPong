@@ -43,3 +43,7 @@ signal updated_opponent_paddle_position(pos: Vector2)
 signal updated_player_paddle_rotation(rot: float)
 signal updated_opponent_paddle_rotation(rot: float)
 #endregion
+
+#region gamemanager
+signal set_paddle_facing_right(player_paddle: bool, right: bool)
+#endregion
