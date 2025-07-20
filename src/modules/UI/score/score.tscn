@@ -52,7 +52,7 @@ grow_vertical = 0
 
 [node name="Spacer" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-text = " "
+text = "   "
 label_settings = SubResource("LabelSettings_lhp1n")
 
 [node name="RightScoreLabel" type="Label" parent="HBoxContainer"]

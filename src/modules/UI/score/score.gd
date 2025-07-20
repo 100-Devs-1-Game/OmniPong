@@ -94,11 +94,18 @@ func _play_secondary_effect() -> void:
     shake_right = false
 
 
+func randf_double_range(low1: float, high1: float, low2: float, high2: float) -> float:
+    # select a random value between -30..-15 or 15..30
+    # we don't want small values, because it results in a minor shake
+    if randi() % 2 == 0:
+        return randf_range(low1, high1)
+    return randf_range(low2, high2)
+
+
 func move_by_random_offset(label: Label, tween) -> void:
     var original_pos = label.position
-    var intensity = 20  # pixels to shake
     var duration = 0.07  # how long each shake lasts
-    var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
+    var offset = Vector2(randf_double_range(-30, -15, 15, 30), randf_double_range(-30, -15, 15, 30))
     (
         tween
         . tween_property(label, "position", original_pos + offset, duration)

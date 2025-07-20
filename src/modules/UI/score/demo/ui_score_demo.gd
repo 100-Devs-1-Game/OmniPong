@@ -1,17 +1,17 @@
 extends Node2D
 var r_score: int = 0
 var l_score: int = 0
-var hide: bool = false
+var show_score: bool = true
 
 
 func _input(event):
     if event is InputEventMouseButton and event.pressed:
         if event.button_index == MOUSE_BUTTON_MIDDLE:
-            if !hide:
+            if show_score:
                 EventBus.emit_signal("ui_show_score")
             else:
                 EventBus.emit_signal("ui_hide_score")
-            hide = !hide
+            show_score = !show_score
             return
         if event.button_index == MOUSE_BUTTON_LEFT:
             l_score += 1
