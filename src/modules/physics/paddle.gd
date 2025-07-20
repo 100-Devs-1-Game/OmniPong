@@ -17,9 +17,13 @@ var is_player := false:
         is_player = b
         if is_player:
             initialize_player_controller(InputPaddleController.ControlScheme.KEYBOARD_AND_MOUSE)
+        else:
+            initialize_ai_controller()
 
 
 func _physics_process(delta: float) -> void:
+    if not controller:
+        return
     velocity = move_toward(
         velocity, controller.get_vertical_input() * get_current_speed(), acceleration * delta
     )
@@ -37,6 +41,12 @@ func _physics_process(delta: float) -> void:
     var look_vec := controller.get_look_vector(position)
 
     look_at(position + look_vec)
+    if is_player:
+        EventBus.updated_player_paddle_position.emit(position)
+        EventBus.updated_player_paddle_rotation.emit(rotation)
+    else:
+        EventBus.updated_opponent_paddle_position.emit(position)
+        EventBus.updated_opponent_paddle_rotation.emit(rotation)
 
 
 func get_current_speed() -> float:
@@ -48,4 +58,11 @@ func initialize_player_controller(scheme: InputPaddleController.ControlScheme):
     node.set_script(paddle_controller_script)
     add_child(node)
     controller = node as InputPaddleController
-    controller.control_scheme = InputPaddleController.ControlScheme.KEYBOARD_AND_MOUSE
+    controller.control_scheme = scheme
+
+
+func initialize_ai_controller():
+    var node = Node.new()
+    node.set_script(paddle_controller_script)
+    add_child(node)
+    controller = node
