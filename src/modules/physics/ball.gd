@@ -4,6 +4,11 @@ extends CharacterBody2D
 @export var wall_margin: float = 50.0
 
 
+func _ready() -> void:
+    EventBus.set_ball_position.connect(func(pos: Vector2): position = pos)
+    EventBus.set_ball_velocity.connect(func(vel: Vector2): velocity = vel)
+
+
 func _physics_process(delta: float) -> void:
     var motion: Vector2 = velocity * delta
     var new_position = position + motion
