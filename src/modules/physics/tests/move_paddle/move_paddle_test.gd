@@ -4,4 +4,4 @@ extends Node2D
 
 
 func _ready() -> void:
-	paddle.is_player = true
+    paddle.is_player = true
