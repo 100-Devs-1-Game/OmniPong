@@ -14,15 +14,15 @@ var _player_data_holder: PlayerDataHolder
 
 
 func _ready() -> void:
-	_set_up()
+    _set_up()
 
 
 func _set_up() -> void:
-	_set_ready_variables()
+    _set_ready_variables()
 
 
 func _set_ready_variables() -> void:
-	_player_data_holder = PlayerDataHolder.new()
+    _player_data_holder = PlayerDataHolder.new()
 
 
 #endregion
@@ -31,7 +31,7 @@ func _set_ready_variables() -> void:
 
 
 func get_player_data_holder() -> PlayerDataHolder:
-	assert(_player_data_holder != null, "Player data holder missing")
-	return _player_data_holder
+    assert(_player_data_holder != null, "Player data holder missing")
+    return _player_data_holder
 
 #endregion

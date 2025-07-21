@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
     var motion: Vector2 = velocity * delta
     motion *= get_speed_ratio() * global_speed_factor
 
-	var new_position = position + motion
+    var new_position = position + motion
 
     if motion.y < 0 and new_position.y < wall_margin:
         velocity = velocity.bounce(Vector2.DOWN)
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
         velocity = velocity.bounce(Vector2.UP)
         EventBus.ball_collision_wall.emit()
 
-	var collision := move_and_collide(motion)
+    var collision := move_and_collide(motion)
 
     if collision:
         var normal := collision.get_normal()
@@ -38,12 +38,12 @@ func _physics_process(delta: float) -> void:
         else:
             position += collision.get_remainder()
 
-	EventBus.updated_ball_velocity.emit(velocity)
-	EventBus.updated_ball_position.emit(position)
+    EventBus.updated_ball_velocity.emit(velocity)
+    EventBus.updated_ball_position.emit(position)
 
 
 func get_speed_ratio() -> float:
-	return 1.0 / abs(pow(Vector2.RIGHT.dot(velocity.normalized()), angle_speed_ratio))
+    return 1.0 / abs(pow(Vector2.RIGHT.dot(velocity.normalized()), angle_speed_ratio))
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

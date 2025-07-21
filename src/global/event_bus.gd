@@ -131,10 +131,10 @@ signal set_paddle_facing_right(player_paddle: bool, right: bool)
 signal campaign_levels_loaded
 @warning_ignore("UNUSED_SIGNAL")
 signal campaign_state_changed(
-	data: LevelData, old: CampaignManager.CAMPAIGN_STATE, new: CampaignManager.CAMPAIGN_STATE
+    data: LevelData, old: CampaignManager.CAMPAIGN_STATE, new: CampaignManager.CAMPAIGN_STATE
 )
 @warning_ignore("UNUSED_SIGNAL")
 signal campaign_level_state_changed(
-	data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE
+    data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE
 )
 #endregion

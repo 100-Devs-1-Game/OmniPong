@@ -17,5 +17,5 @@ enum PowerupType { BALL, PADDLE }
 
 
 func pick_up(pickup_event: PowerupPickupEvent) -> void:
-	for effect in powerup_effects:
-		effect.apply_effect(pickup_event)
+    for effect in powerup_effects:
+        effect.apply_effect(pickup_event)

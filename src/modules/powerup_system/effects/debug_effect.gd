@@ -4,5 +4,5 @@ class_name DebugPowerupEffect
 
 
 func apply_effect(event: PowerupPickupEvent) -> void:
-	print("Applied powerup effect on: ", event.entity)
-	print("Apply message: ", on_apply_message)
+    print("Applied powerup effect on: ", event.entity)
+    print("Apply message: ", on_apply_message)
