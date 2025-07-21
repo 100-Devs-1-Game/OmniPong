@@ -46,6 +46,17 @@ signal updated_opponent_paddle_position(pos: Vector2)
 signal updated_player_paddle_rotation(rot: float)
 signal updated_opponent_paddle_rotation(rot: float)
 signal ball_exited_screen(right_side: bool)
+
+signal set_paddle_size(is_player: bool, size: float)
+signal change_paddle_size(is_player: bool, size_delta: float)
+signal set_ball_size(size: float)
+signal change_ball_size(size_delta: float)
+signal set_paddle_speed(is_player: bool, speed: float)
+signal change_paddle_speed(is_player: bool, speed_delta: float)
+signal change_ball_speed_factor(factor: float)
+signal set_paddle_rotation_speed(is_player: bool, rotation_speed: float)
+signal change_paddle_rotation_speed(is_player: bool, rotation_speed_delta: float)
+signal lock_paddle_rotation_speed(is_player: bool, lock: bool)
 #endregion
 
 #region gamemanager
