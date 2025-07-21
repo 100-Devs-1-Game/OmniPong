@@ -17,7 +17,7 @@ func _ready() -> void:
     set_collision_layer_value(5, true)
 
     # Set collision mask to be affected by either the Paddle or the Ball
-    var mask := 1 if powerup_resource.powerup_type == Powerup.PowerupType.BALL else 2
+    var mask := 1 if powerup_resource.powerup_type == Powerup.PowerupType.PADDLE else 2
     set_collision_mask_value(mask, true)
 
     body_entered.connect(func(body: Node2D): pick_up(body))
