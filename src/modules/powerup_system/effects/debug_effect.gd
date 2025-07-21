@@ -1,5 +1,5 @@
-class_name DebugPowerupEffect extends PowerupEffect
-
+extends PowerupEffect
+class_name DebugPowerupEffect
 @export var on_apply_message: String = "Hello world!"
 
 

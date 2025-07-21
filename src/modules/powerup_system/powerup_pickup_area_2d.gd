@@ -47,10 +47,11 @@ func setup_visuals() -> void:
         var vfx_node: Node = powerup_resource.powerup_vfx.instantiate()
         add_child(vfx_node)
 
-    if powerup_resource.powerup_texture:
-        var sprite := Sprite2D.new()
-        sprite.texture = powerup_resource.powerup_texture
+    if powerup_resource.powerup_frames:
+        var sprite := AnimatedSprite2D.new()
+        sprite.frames = powerup_resource.powerup_frames
         add_child(sprite)
+        sprite.play("default")
         sprite.position = sprite.global_scale / 2.0
 
 

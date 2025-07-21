@@ -7,7 +7,7 @@ enum PowerupType { BALL, PADDLE }
 ## Powerup display name for use in UI
 @export var powerup_display_name: StringName
 ## Texture used for the powerup in-game
-@export var powerup_texture: Texture2D
+@export var powerup_frames: SpriteFrames
 ## Additional scene automatically instantiated on the powerup used for VFX
 @export var powerup_vfx: PackedScene
 ## Decides if the powerup can be picked up by the Ball or Paddle
