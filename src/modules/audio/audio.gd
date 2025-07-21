@@ -11,6 +11,8 @@ var sfx_map = {
     "main_menu_any_button_hover": preload("res://assets/sound_fx/ui_hover.wav"),
     "main_menu_play_button_clicked": preload("res://assets/sound_fx/ui_select.wav"),
     # arena-related
+    "ball_collision_paddle": preload("res://assets/sound_fx/SOUND_000025.wav"),
+    "ball_collision_wall": preload("res://assets/sound_fx/SOUND_000025.wav"),
     "ball_exited_screen": preload("res://assets/sound_fx/SOUND_000013.wav")
 }
 
