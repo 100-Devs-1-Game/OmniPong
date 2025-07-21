@@ -26,6 +26,10 @@ signal ui_hide_score
 
 #Show thr Score UI
 signal ui_show_score
+
+signal ui_set_healthbar(left: int, right: int)
+signal ui_hide_healthbar
+signal ui_show_healthbar
 #endregion
 
 #region main_menu
