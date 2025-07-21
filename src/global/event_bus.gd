@@ -78,8 +78,6 @@ signal change_ball_speed_factor(factor: float)
 signal set_paddle_rotation_speed(is_player: bool, rotation_speed: float)
 signal change_paddle_rotation_speed(is_player: bool, rotation_speed_delta: float)
 signal lock_paddle_rotation_speed(is_player: bool, lock: bool)
-signal ball_collision_paddle
-signal ball_collision_wall
 #endregion
 
 #region gamemanager
