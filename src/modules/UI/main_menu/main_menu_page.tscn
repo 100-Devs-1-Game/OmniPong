@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://82ylt6hfippm"]
+[gd_scene load_steps=5 format=3 uid="uid://82ylt6hfippm"]
 
 [ext_resource type="Script" uid="uid://cmmynudkxdhlo" path="res://modules/UI/main_menu/main_menu_page.gd" id="1_f7l61"]
 [ext_resource type="PackedScene" uid="uid://cy8y2pagi1xbx" path="res://modules/campaign/campaign.tscn" id="2_pgu6p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgu6p"]
+font_size = 53
+
+[sub_resource type="LabelSettings" id="LabelSettings_j1pm4"]
+font_size = 25
 
 [node name="Main-Menu-Page" type="Control"]
 layout_mode = 3
@@ -21,11 +27,23 @@ color = Color(0.249075, 4.29447e-05, 0.249963, 1)
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 2
-offset_left = 510.0
-offset_top = 168.0
-offset_right = 642.0
-offset_bottom = 191.0
-text = "100 Devs --- Pong"
+offset_left = 453.0
+offset_top = 137.0
+offset_right = 699.0
+offset_bottom = 204.0
+text = "OmniPong"
+label_settings = SubResource("LabelSettings_pgu6p")
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="."]
+layout_mode = 2
+offset_left = 337.0
+offset_top = 206.0
+offset_right = 808.0
+offset_bottom = 273.0
+text = "by 100 Devs 1 Game"
+label_settings = SubResource("LabelSettings_j1pm4")
+horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
