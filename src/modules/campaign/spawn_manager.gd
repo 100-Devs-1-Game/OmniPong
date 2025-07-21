@@ -8,30 +8,40 @@ class_name SpawnManager
 
 var _ball
 
+
 func _ready() -> void:
     EventBus.ball_exited_screen.connect(_on_ball_exited_screen)
-    
+
+
 func _on_ball_exited_screen(right_side: bool, speed: float) -> void:
     _ball.queue_free()
     handle_ball_spawn()
+
 
 func spawn(level_data: LevelData) -> void:
     handle_player_spawn()
     handle_opponent_spawn(level_data)
     handle_ball_spawn()
 
+
 func handle_opponent_spawn(level_data: LevelData):
     DataWarehouse.enemy_data = EnemyData.new()
     DataWarehouse.enemy_data.hp = level_data.enemy_stats.hp_max
     DataWarehouse.enemy_data.max_hp = level_data.enemy_stats.hp_max
-    
-    EventBus.set_paddle_hit_strength_multiplier.emit(false, level_data.enemy_stats.hit_strength_multiplier)
-    EventBus.set_paddle_movement_speed_multiplier.emit(false, level_data.enemy_stats.movement_speed_multiplier)
+
+    EventBus.set_paddle_hit_strength_multiplier.emit(
+        false, level_data.enemy_stats.hit_strength_multiplier
+    )
+    EventBus.set_paddle_movement_speed_multiplier.emit(
+        false, level_data.enemy_stats.movement_speed_multiplier
+    )
     EventBus.set_paddle_size_multiplier.emit(false, level_data.enemy_stats.size_multiplier)
-    EventBus.set_paddle_rotation_speed_multiplier.emit(false, level_data.enemy_stats.rotation_speed_multiplier)
+    EventBus.set_paddle_rotation_speed_multiplier.emit(
+        false, level_data.enemy_stats.rotation_speed_multiplier
+    )
     if !level_data.enemy_textures.is_empty():
         EventBus.set_paddle_texture.emit(false, level_data.enemy_textures[0])
-    
+
     var opponent_paddle: Node = paddle_scene.instantiate()
     self.add_child(opponent_paddle)
     opponent_paddle.paddle_controller_script = load("res://modules/AI/ai_paddle_controller.gd")

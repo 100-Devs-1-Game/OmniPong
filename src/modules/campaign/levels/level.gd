@@ -21,7 +21,7 @@ func start(data: LevelData):
     spawn_manager.paddle_scene = preload("res://modules/physics/paddle.tscn")
     spawn_manager.ball_scene = preload("res://modules/physics/ball.tscn")
     add_child(spawn_manager)
-    
+
     spawn_manager.spawn(data)
 
     EventBus.set_paddle_stats.emit(false, data.enemy_stats)

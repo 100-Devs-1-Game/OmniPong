@@ -106,10 +106,10 @@ signal change_paddle_rotation_speed(is_player: bool, rotation_speed_delta: float
 @warning_ignore("UNUSED_SIGNAL")
 signal lock_paddle_rotation_speed(is_player: bool, lock: bool)
 
-signal set_paddle_hit_strength_multiplier(is_player: bool, multiplier: float) # affects how fast the ball moves when hit by this specific paddle
+signal set_paddle_hit_strength_multiplier(is_player: bool, multiplier: float)  # affects how fast the ball moves when hit by this specific paddle
 signal set_paddle_movement_speed_multiplier(is_player: bool, multiplier: float)
 signal set_paddle_rotation_speed_multiplier(is_player: bool, multiplier: float)
-signal set_paddle_size_multiplier(is_player:bool, multiplier: float)
+signal set_paddle_size_multiplier(is_player: bool, multiplier: float)
 signal set_paddle_texture(is_player: bool, texture: Texture2D)
 
 #endregion
