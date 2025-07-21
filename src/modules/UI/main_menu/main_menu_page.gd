@@ -10,6 +10,7 @@ func _ready() -> void:
     $CenterContainer/VBoxContainer/PlayButton.connect("pressed", _on_play_button_down)
     $CenterContainer/VBoxContainer/PlayCampaignButton.connect("pressed", _on_campaign_button_down)
     $CenterContainer/VBoxContainer/SettingsButton.connect("pressed", _on_settings_button_down)
+    EventBus.emit_signal("main_menu_start")
 
 
 func _on_play_button_down():

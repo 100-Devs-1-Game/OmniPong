@@ -33,6 +33,7 @@ signal ui_show_healthbar
 #endregion
 
 #region main_menu
+signal main_menu_start
 signal main_menu_play_button_clicked
 signal main_menu_campaign_play_button_clicked
 signal main_menu_settings_button_clicked
