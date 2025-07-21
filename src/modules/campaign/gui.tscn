@@ -6,3 +6,4 @@
 
 [node name="Healthbar" parent="." instance=ExtResource("1_olx81")]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.658824)
