@@ -67,3 +67,7 @@ text = "CAMPAIGN"
 [node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "SETTINGS"
+
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/PlayCampaignButton" to="." method="_on_play_campaign_button_mouse_entered"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_entered"]

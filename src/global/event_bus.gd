@@ -33,13 +33,19 @@ signal ui_hide_score
 #Show thr Score UI
 @warning_ignore("UNUSED_SIGNAL")
 signal ui_show_score
-
+@warning_ignore("UNUSED_SIGNAL")
 signal ui_set_healthbar(left: int, right: int)
+@warning_ignore("UNUSED_SIGNAL")
 signal ui_hide_healthbar
+@warning_ignore("UNUSED_SIGNAL")
 signal ui_show_healthbar
 #endregion
 
 #region main_menu
+@warning_ignore("UNUSED_SIGNAL")
+signal main_menu_start
+@warning_ignore("UNUSED_SIGNAL")
+signal main_menu_any_button_hover
 @warning_ignore("UNUSED_SIGNAL")
 signal main_menu_play_button_clicked
 @warning_ignore("UNUSED_SIGNAL")
@@ -66,17 +72,32 @@ signal updated_opponent_paddle_position(pos: Vector2)
 signal updated_player_paddle_rotation(rot: float)
 @warning_ignore("UNUSED_SIGNAL")
 signal updated_opponent_paddle_rotation(rot: float)
+@warning_ignore("UNUSED_SIGNAL")
+signal ball_collision_paddle
+@warning_ignore("UNUSED_SIGNAL")
+signal ball_collision_wall
+@warning_ignore("UNUSED_SIGNAL")
 signal ball_exited_screen(right_side: bool, speed: float)
 
+@warning_ignore("UNUSED_SIGNAL")
 signal set_paddle_size(is_player: bool, size: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal change_paddle_size(is_player: bool, size_delta: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal set_ball_size(size: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal change_ball_size(size_delta: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal set_paddle_speed(is_player: bool, speed: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal change_paddle_speed(is_player: bool, speed_delta: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal change_ball_speed_factor(factor: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal set_paddle_rotation_speed(is_player: bool, rotation_speed: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal change_paddle_rotation_speed(is_player: bool, rotation_speed_delta: float)
+@warning_ignore("UNUSED_SIGNAL")
 signal lock_paddle_rotation_speed(is_player: bool, lock: bool)
 #endregion
 
@@ -103,5 +124,6 @@ signal campaign_state_changed(
 signal campaign_level_state_changed(
     data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE
 )
+@warning_ignore("UNUSED_SIGNAL")
 signal set_paddle_texture(is_player: bool, texture: Texture2D)
 #endregion
