@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://djkp82bhabaph"]
+[gd_scene load_steps=4 format=3 uid="uid://djkp82bhabaph"]
 
 [ext_resource type="Script" uid="uid://k0l2nmtyoqeh" path="res://modules/campaign/levels/level.gd" id="1_jl74f"]
+[ext_resource type="Texture2D" uid="uid://b02v124dkylxi" path="res://assets/textures/backdrops/backdrop_03.webp" id="2_y3fqy"]
+[ext_resource type="PackedScene" uid="uid://cbucadc6wdrdp" path="res://modules/campaign/gui.tscn" id="3_okjt8"]
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_jl74f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.366594, 0.366595, 0.366595, 1)
+z_index = -100
+texture = ExtResource("2_y3fqy")
+offset = Vector2(256, 256)
+
+[node name="Gui" parent="." instance=ExtResource("3_okjt8")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -11,13 +21,13 @@ script = ExtResource("1_jl74f")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -36.0
-offset_top = 113.0
-offset_right = 41.0
-offset_bottom = 136.0
+offset_left = -98.0
+offset_right = 98.0
+offset_bottom = 117.0
 grow_horizontal = 2
 size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 41
 text = "Level One
 "
-metadata/_edit_use_anchors_ = true

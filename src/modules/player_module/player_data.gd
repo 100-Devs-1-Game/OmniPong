@@ -7,5 +7,7 @@ extends Resource
 @export var current_level_xp: int = 0
 #TODO fill array type with powerup type
 @export var permanent_powerups: Array = []
+@export var stats: PaddleStatsData
+@export var hp: float = 0
 
 #endregion

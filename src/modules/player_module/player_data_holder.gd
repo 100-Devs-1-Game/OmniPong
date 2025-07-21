@@ -18,7 +18,6 @@ var _data: PlayerData
 func _init() -> void:
     _set_up()
 
-
 func _set_up() -> void:
     _data = PlayerData.new()
     # TODO think about what data should be saved
@@ -31,11 +30,23 @@ func _set_up() -> void:
 # Place for all functions that modify data
 # Try to create function for every action and don’t modify data directly
 
+func reset() -> void:
+    _init()
 
 func add_xp(number: float) -> void:
     _data.current_level_xp += number
     _try_level_up()
 
+func set_hp(hp: float) -> void:
+    _data.hp = hp
+    
+func get_hp() -> float:
+    return _data.hp
+    
+func take_damage(damage: float) -> float:
+    _data.hp -= damage
+    EventBus.paddle_hp_changed.emit(true, _data.hp)
+    return _data.hp
 
 #endregion
 

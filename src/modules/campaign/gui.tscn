@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbucadc6wdrdp"]
+
+[ext_resource type="Texture2D" uid="uid://i2t5ka62h524" path="res://assets/textures/paddles/paddle_01.webp" id="1_olx81"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -99.0
+offset_top = 10.0
+offset_right = 29.0
+offset_bottom = 296.0
+scale = Vector2(6.63636, 0.2)
+texture = ExtResource("1_olx81")

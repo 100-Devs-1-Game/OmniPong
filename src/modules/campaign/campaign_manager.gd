@@ -72,11 +72,24 @@ func _enter_tree() -> void:
     add_to_group(group)
 
     _load_data(level_data_directory)
+    
+    EventBus.ball_exited_screen.connect(_on_ball_exited_screen)
 
-
+func _on_ball_exited_screen(right_side: bool, speed: float) -> void:
+    print(speed)
+    if right_side:
+        pass
+    else:
+        var new_hp := DataWarehouse.get_player_data_holder().take_damage(speed)
+        Logger.verbose("player hp is now %f" % new_hp)
+        if new_hp <= 0:
+            _change_campaign_state(CAMPAIGN_STATE.INACTIVE_LOST)
+            _change_level_state(LEVEL_STATE.INVALID)
+            _change_level_node(preload("res://modules/campaign/levels/lost.tscn"))
+            
 func _ready():
     if autostart:
-        start()
+        start.call_deferred() #idk, otherwise the enemy paddle spawns... on the player??
 
 
 func _exit_tree() -> void:
@@ -151,7 +164,9 @@ func _change_level_node(new_level: PackedScene):
         child.queue_free()
 
     # we don't want both levels existing on the same frame, so wait until the queue_free deletes the old one
-    await get_tree().process_frame
+    # TODO: had to disable this because there would be a blank frame on level change? idk why
+    # add it back when/if we have levl changing transitions etc.
+    #await get_tree().process_frame
 
     _current_level = new_level.instantiate() as Level
     level_container.add_child(_current_level)

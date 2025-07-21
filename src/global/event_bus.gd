@@ -61,8 +61,8 @@ signal player_leveled_up(new_level: float)
 
 #region stats
 #TODO: I have no idea, whatever works, replace this with whatever other people are making
-signal paddle_hp_changed(is_ai: bool, hp: float)
-signal set_paddle_stats(is_ai: bool, stats: PaddleStatsData)
+signal paddle_hp_changed(is_player: bool, hp: float)
+signal set_paddle_stats(is_player: bool, stats: PaddleStatsData)
 #endregion stats
 
 #region physics
@@ -105,6 +105,13 @@ signal set_paddle_rotation_speed(is_player: bool, rotation_speed: float)
 signal change_paddle_rotation_speed(is_player: bool, rotation_speed_delta: float)
 @warning_ignore("UNUSED_SIGNAL")
 signal lock_paddle_rotation_speed(is_player: bool, lock: bool)
+
+signal set_paddle_hit_strength_multiplier(is_player: bool, multiplier: float) # affects how fast the ball moves when hit by this specific paddle
+signal set_paddle_movement_speed_multiplier(is_player: bool, multiplier: float)
+signal set_paddle_rotation_speed_multiplier(is_player: bool, multiplier: float)
+signal set_paddle_size_multiplier(is_player:bool, multiplier: float)
+signal set_paddle_texture(is_player: bool, texture: Texture2D)
+
 #endregion
 
 #region gamemanager

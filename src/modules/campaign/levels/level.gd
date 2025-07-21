@@ -24,16 +24,16 @@ func start(data: LevelData):
     
     spawn_manager.spawn(data.enemy_stats)
 
-    EventBus.set_paddle_stats.emit(true, data.enemy_stats)
+    EventBus.set_paddle_stats.emit(false, data.enemy_stats)
     EventBus.paddle_hp_changed.connect(_on_paddle_hp_changed)
 
     # TODO: remove after testing
-    await get_tree().create_timer(3).timeout
+    await get_tree().create_timer(30).timeout
 
-    EventBus.paddle_hp_changed.emit(true, 0)
+    EventBus.paddle_hp_changed.emit(false, 0)
 
 
-func _on_paddle_hp_changed(is_ai: bool, hp: float) -> void:
-    if is_ai && hp <= 0:
+func _on_paddle_hp_changed(is_player: bool, hp: float) -> void:
+    if !is_player && hp <= 0:
         # TODO: nice animations/text/delay/etc
         campaign_manager.next_level()

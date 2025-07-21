@@ -6,13 +6,22 @@ class_name SpawnManager
 
 @onready var viewport_size: Vector2 = get_viewport().get_visible_rect().size
 
-func spawn(enemy_paddle_stats: PaddleStatsData) -> void:
-    handle_player_spawn()
-    handle_opponent_spawn(enemy_paddle_stats)
+func _ready() -> void:
+    EventBus.ball_exited_screen.connect(_on_ball_exited_screen)
+    
+func _on_ball_exited_screen(right_side: bool, speed: float) -> void:
     handle_ball_spawn()
 
-func handle_opponent_spawn(enemy_paddle_stats: PaddleStatsData):
-    #TODO use the stats? alt. they can listen to the signal?
+func spawn(enemy_paddle_stats: PaddleStatsData) -> void:
+    handle_player_spawn()
+    #handle_opponent_spawn(enemy_paddle_stats)
+    handle_ball_spawn()
+
+func handle_opponent_spawn(stats: PaddleStatsData):
+    EventBus.set_paddle_hit_strength_multiplier.emit(false, stats.hit_strength_multiplier)
+    EventBus.set_paddle_movement_speed_multiplier.emit(false, stats.movement_speed_multiplier)
+    EventBus.set_paddle_size_multiplier.emit(false, stats.size_multiplier)
+    EventBus.set_paddle_rotation_speed_multiplier.emit(false, stats.rotation_speed_multiplier)
     
     var opponent_paddle: Node = paddle_scene.instantiate()
     self.add_child(opponent_paddle)
