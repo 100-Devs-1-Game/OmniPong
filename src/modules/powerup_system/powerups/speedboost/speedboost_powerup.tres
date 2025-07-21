@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=6 format=3 uid="uid://d2sqf0wsthbko"]
+
+[ext_resource type="Script" uid="uid://tvxig6akjiqd" path="res://modules/powerup_system/powerup_effect.gd" id="1_tjo5h"]
+[ext_resource type="Script" uid="uid://iax4wc1wppk3" path="res://modules/powerup_system/powerups/speedboost/speedboostpowerupeffect.gd" id="2_d4c2k"]
+[ext_resource type="Script" uid="uid://dwayqr5vvtmex" path="res://modules/powerup_system/powerup.gd" id="2_f427v"]
+[ext_resource type="SpriteFrames" uid="uid://c7so7xe8gcujj" path="res://modules/powerup_system/powerups/speedboost/speedboostframes.tres" id="3_kd0sm"]
+
+[sub_resource type="Resource" id="Resource_kd0sm"]
+script = ExtResource("2_d4c2k")
+metadata/_custom_type_script = "uid://iax4wc1wppk3"
+
+[resource]
+script = ExtResource("2_f427v")
+powerup_identifier = &"Speed boost"
+powerup_display_name = &"Speed Boost"
+powerup_frames = ExtResource("3_kd0sm")
+powerup_type = 0
+powerup_effects = Array[ExtResource("1_tjo5h")]([SubResource("Resource_kd0sm")])
+metadata/_custom_type_script = "uid://dwayqr5vvtmex"

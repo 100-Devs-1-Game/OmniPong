@@ -7,7 +7,7 @@ enum PowerupType { BALL, PADDLE }
 ## Powerup display name for use in UI
 @export var powerup_display_name: StringName
 ## Texture used for the powerup in-game
-@export var powerup_texture: Texture2D
+@export var powerup_frames: SpriteFrames
 ## Additional scene automatically instantiated on the powerup used for VFX
 @export var powerup_vfx: PackedScene
 ## Decides if the powerup can be picked up by the Ball or Paddle
@@ -17,5 +17,5 @@ enum PowerupType { BALL, PADDLE }
 
 
 func pick_up(pickup_event: PowerupPickupEvent) -> void:
-    for effect in powerup_effects:
-        effect.apply_effect(pickup_event)
+	for effect in powerup_effects:
+		effect.apply_effect(pickup_event)
