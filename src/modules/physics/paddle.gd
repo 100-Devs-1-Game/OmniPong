@@ -6,7 +6,7 @@ extends Node2D
 @export var move_speed: float = 100.0
 @export var rotation_speed: float = 0.5
 @export var acceleration: float = 100.0
-@export var vertical_wall_margin: float = 100.0
+@export var vertical_wall_margin: float = 50.0
 
 @onready var sprite: Sprite2D = $Sprite2D
 

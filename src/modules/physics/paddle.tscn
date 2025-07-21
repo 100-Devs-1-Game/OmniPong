@@ -5,18 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://tbtyr87sedre" path="res://assets/textures/gold_paddle.webp" id="3_dswwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wruu2"]
-size = Vector2(28, 280)
+size = Vector2(18, 140)
 
 [node name="Paddle" type="CharacterBody2D"]
 script = ExtResource("1_0ukoy")
 paddle_controller_script = ExtResource("2_dswwi")
-max_move_speed = 150.0
 acceleration = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(15, 1.42109e-13)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_dswwi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(45, 0)
+position = Vector2(13, 0)
 shape = SubResource("RectangleShape2D_wruu2")
