@@ -23,8 +23,10 @@ func _physics_process(delta: float) -> void:
 
     if motion.y < 0 and new_position.y < wall_margin:
         velocity = velocity.bounce(Vector2.DOWN)
+        EventBus.ball_collision_wall.emit()
     if motion.y > 0 and new_position.y > get_viewport().get_visible_rect().size.y - wall_margin:
         velocity = velocity.bounce(Vector2.UP)
+        EventBus.ball_collision_wall.emit()
 
     var collision := move_and_collide(motion)
 
@@ -32,6 +34,7 @@ func _physics_process(delta: float) -> void:
         var normal := collision.get_normal()
         if sign(normal.x) != sign(velocity.x):
             velocity = velocity.bounce(collision.get_normal())
+            EventBus.ball_collision_paddle.emit()
         else:
             position += collision.get_remainder()
 
