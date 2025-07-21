@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnv4thrhios5t"]
+
+[ext_resource type="Script" uid="uid://k0l2nmtyoqeh" path="res://modules/campaign/levels/level.gd" id="1_t3oh6"]
+
+[node name="LevelTwo" type="Node2D"]
+script = ExtResource("1_t3oh6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 113.0
+offset_right = 41.0
+offset_bottom = 136.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 41
+text = "Level Two"
+metadata/_edit_use_anchors_ = true

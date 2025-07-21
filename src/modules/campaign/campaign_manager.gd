@@ -44,6 +44,7 @@ func start():
         return
 
     _current_level_data = null
+    _current_level = null
     _current_level_state = LEVEL_STATE.INVALID
 
     _change_campaign_state(CAMPAIGN_STATE.ACTIVE)
@@ -57,6 +58,7 @@ func next_level():
 var _campaign_state: CAMPAIGN_STATE = CAMPAIGN_STATE.INVALID
 
 var _current_level_state: LEVEL_STATE = LEVEL_STATE.INVALID
+var _current_level: Level
 var _current_level_data: LevelData
 
 # Key is the path to the LevelData
@@ -110,6 +112,7 @@ func _change_level_state(new: LEVEL_STATE) -> void:
         ),
         logmod
     )
+
     EventBus.campaign_level_state_changed.emit(_current_level_data, old, new)
 
 
@@ -142,8 +145,6 @@ func _next_level() -> void:
         Logger.verbose("Campaign won!", logmod)
         return
 
-    _change_level_state(LEVEL_STATE.STARTED)
-
 
 func _change_level_node(new_level: PackedScene):
     for child in level_container.get_children():
@@ -152,8 +153,10 @@ func _change_level_node(new_level: PackedScene):
     # we don't want both levels existing on the same frame, so wait until the queue_free deletes the old one
     await get_tree().process_frame
 
-    var new_level_node = new_level.instantiate()
-    level_container.add_child(new_level_node)
+    _current_level = new_level.instantiate() as Level
+    level_container.add_child(_current_level)
+    _current_level.start(_current_level_data)
+    _change_level_state(LEVEL_STATE.STARTED)
 
 
 func _load_data(directory_path: StringName) -> void:

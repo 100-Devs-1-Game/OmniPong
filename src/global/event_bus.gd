@@ -59,6 +59,12 @@ signal main_menu_settings_button_clicked
 signal player_leveled_up(new_level: float)
 #endregion
 
+#region stats
+#TODO: I have no idea, whatever works, replace this with whatever other people are making
+signal paddle_hp_changed(is_ai: bool, hp: float)
+signal set_paddle_stats(is_ai: bool, stats: PaddleStatsData)
+#endregion stats
+
 #region physics
 @warning_ignore("UNUSED_SIGNAL")
 signal updated_ball_position(pos: Vector2)
