@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://nifluqa8by24"]
+
+[ext_resource type="Texture2D" uid="uid://cg3eq1ur20wtm" path="res://modules/UI/healthbar/assets/HealthUI.png" id="1_intad"]
+[ext_resource type="Script" uid="uid://boidn04s1o1c6" path="res://modules/UI/healthbar/healthbar.gd" id="1_orcw4"]
+[ext_resource type="Texture2D" uid="uid://o7q73imxehoi" path="res://modules/UI/healthbar/assets/HealthBar.png" id="2_orcw4"]
+
+[node name="Healthbar" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.106
+offset_bottom = -0.480003
+grow_horizontal = 2
+script = ExtResource("1_orcw4")
+
+[node name="Left" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 22.0
+offset_top = 16.0
+offset_right = -782.0
+offset_bottom = 151.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_under = ExtResource("1_intad")
+texture_progress = ExtResource("2_orcw4")
+texture_progress_offset = Vector2(169.54, 58.54)
+
+[node name="Right" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 1904.0
+offset_top = 16.0
+offset_right = 1100.0
+offset_bottom = 151.0
+grow_horizontal = 0
+scale = Vector2(-0.5, 0.5)
+value = 100.0
+texture_under = ExtResource("1_intad")
+texture_progress = ExtResource("2_orcw4")
+texture_progress_offset = Vector2(169.54, 58.54)
