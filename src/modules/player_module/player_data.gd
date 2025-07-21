@@ -8,6 +8,7 @@ extends Resource
 #TODO fill array type with powerup type
 @export var permanent_powerups: Array = []
 @export var stats: PaddleStatsData
-@export var hp: float = 0
+@export var hp: float = 10
+@export var max_hp: float = 10
 
 #endregion

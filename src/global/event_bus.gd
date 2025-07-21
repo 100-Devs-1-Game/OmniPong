@@ -33,8 +33,8 @@ signal ui_hide_score
 #Show thr Score UI
 @warning_ignore("UNUSED_SIGNAL")
 signal ui_show_score
-@warning_ignore("UNUSED_SIGNAL")
-signal ui_set_healthbar(left: int, right: int)
+
+signal ui_set_healthbar(left: float, right: float)
 @warning_ignore("UNUSED_SIGNAL")
 signal ui_hide_healthbar
 @warning_ignore("UNUSED_SIGNAL")

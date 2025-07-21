@@ -18,12 +18,14 @@ offset = Vector2(256, 256)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -98.0
-offset_right = 98.0
-offset_bottom = 117.0
+offset_left = -90.0
+offset_top = 306.0
+offset_right = 106.0
+offset_bottom = 423.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

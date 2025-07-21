@@ -14,10 +14,12 @@ texture = ExtResource("2_inhxp")
 offset = Vector2(256, 256)
 
 [node name="GUI" parent="." instance=ExtResource("3_1w7gc")]
+unique_name_in_owner = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

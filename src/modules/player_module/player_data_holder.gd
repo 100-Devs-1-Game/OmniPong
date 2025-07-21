@@ -9,6 +9,7 @@ extends Node
 #region ------------------------ PRIVATE VARS ----------------------------------
 
 var _data: PlayerData
+var _enemy_data: EnemyData
 
 #endregion
 
@@ -40,8 +41,14 @@ func add_xp(number: float) -> void:
 func set_hp(hp: float) -> void:
     _data.hp = hp
     
+func set_maxhp(hp: float) -> void:
+    _data.maxhp = hp
+    
 func get_hp() -> float:
     return _data.hp
+    
+func get_maxhp() -> float:
+    return _data.max_hp
     
 func take_damage(damage: float) -> float:
     _data.hp -= damage

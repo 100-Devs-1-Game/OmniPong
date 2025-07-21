@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://cfqatstl185jg"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://cfqatstl185jg"]
 
 [ext_resource type="PackedScene" uid="uid://bnv4thrhios5t" path="res://modules/campaign/levels/level_02.tscn" id="1_h5mlo"]
 [ext_resource type="Script" uid="uid://duxg38v3nkyei" path="res://modules/campaign/paddle_stats_data.gd" id="1_qn8ky"]
 [ext_resource type="Resource" uid="uid://cdyfg0u2cc6xu" path="res://modules/campaign/data/03.tres" id="2_0jhqb"]
 [ext_resource type="Script" uid="uid://bmydurrwqpdli" path="res://modules/campaign/level_data.gd" id="2_3e56a"]
+[ext_resource type="Texture2D" uid="uid://dj2cx5jvt4jxi" path="res://assets/textures/paddles/paddle_02.webp" id="2_emaxc"]
 
 [sub_resource type="Resource" id="Resource_emaxc"]
 script = ExtResource("1_qn8ky")
@@ -21,5 +22,5 @@ display_name = &"Level Two"
 scene = ExtResource("1_h5mlo")
 next_level = ExtResource("2_0jhqb")
 enemy_stats = SubResource("Resource_emaxc")
-enemy_textures = Array[Texture2D]([])
+enemy_textures = Array[Texture2D]([ExtResource("2_emaxc")])
 metadata/_custom_type_script = "uid://bmydurrwqpdli"
