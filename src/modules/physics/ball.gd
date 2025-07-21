@@ -27,6 +27,8 @@ func _physics_process(delta: float) -> void:
         var normal := collision.get_normal()
         if sign(normal.x) != sign(velocity.x):
             velocity = velocity.bounce(collision.get_normal())
+        else:
+            position += collision.get_remainder()
 
     EventBus.updated_ball_velocity.emit(velocity)
     EventBus.updated_ball_position.emit(position)
