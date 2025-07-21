@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnv4thrhios5t"]
+
+[ext_resource type="Script" uid="uid://dy6l44se5f1ts" path="res://modules/campaign/levels/level_two.gd" id="1_sni2o"]
+
+[sub_resource type="Gradient" id="Gradient_rfhil"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sue8p"]
+gradient = SubResource("Gradient_rfhil")
+
+[node name="LevelTwo" type="Node2D"]
+script = ExtResource("1_sni2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1016, 514)
+texture = SubResource("GradientTexture2D_sue8p")

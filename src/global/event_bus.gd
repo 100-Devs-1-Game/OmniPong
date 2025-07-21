@@ -26,10 +26,15 @@ signal ui_hide_score
 
 #Show thr Score UI
 signal ui_show_score
+
+signal ui_set_healthbar(left: int, right: int)
+signal ui_hide_healthbar
+signal ui_show_healthbar
 #endregion
 
 #region main_menu
 signal main_menu_play_button_clicked
+signal main_menu_campaign_play_button_clicked
 signal main_menu_settings_button_clicked
 #endregion
 
@@ -45,6 +50,17 @@ signal updated_opponent_paddle_position(pos: Vector2)
 signal updated_player_paddle_rotation(rot: float)
 signal updated_opponent_paddle_rotation(rot: float)
 signal ball_exited_screen(right_side: bool)
+
+signal set_paddle_size(is_player: bool, size: float)
+signal change_paddle_size(is_player: bool, size_delta: float)
+signal set_ball_size(size: float)
+signal change_ball_size(size_delta: float)
+signal set_paddle_speed(is_player: bool, speed: float)
+signal change_paddle_speed(is_player: bool, speed_delta: float)
+signal change_ball_speed_factor(factor: float)
+signal set_paddle_rotation_speed(is_player: bool, rotation_speed: float)
+signal change_paddle_rotation_speed(is_player: bool, rotation_speed_delta: float)
+signal lock_paddle_rotation_speed(is_player: bool, lock: bool)
 #endregion
 
 #region gamemanager
@@ -54,4 +70,14 @@ signal set_ball_velocity(vel: Vector2)
 
 #region gamemanager
 signal set_paddle_facing_right(player_paddle: bool, right: bool)
+#endregion
+
+#region campaign
+signal campaign_levels_loaded
+signal campaign_state_changed(
+    data: LevelData, old: CampaignManager.CAMPAIGN_STATE, new: CampaignManager.CAMPAIGN_STATE
+)
+signal campaign_level_state_changed(
+    data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE
+)
 #endregion
