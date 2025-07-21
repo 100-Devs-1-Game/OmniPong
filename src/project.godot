@@ -56,7 +56,7 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/gut/plug
 
 [gui]
 
-theme/custom_font="uid://b2acc4v73j881"
+theme/custom_font="uid://bnc3ho02m7dln"
 
 [input]
 
