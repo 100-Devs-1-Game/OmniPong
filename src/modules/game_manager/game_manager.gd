@@ -9,6 +9,8 @@ extends Node2D
 @export var powerup_pool: Array[Powerup] = []
 @export var powerup_cooldown_duration: float = 10.0
 
+@export var initial_ball_velocity: float = 300.0
+
 @onready var viewport_size: Vector2 = get_viewport().get_visible_rect().size
 
 var powerup_cooldown: float = 0.0
@@ -66,4 +68,4 @@ func handle_ball_spawn():
     var ball: Node = ball_scene.instantiate()
     self.add_child(ball)
     EventBus.set_ball_position.emit(get_viewport_rect().size / 2)
-    EventBus.set_ball_velocity.emit(Vector2(-1, 0) * 200)
+    EventBus.set_ball_velocity.emit(Vector2(-1, 0) * initial_ball_velocity)
