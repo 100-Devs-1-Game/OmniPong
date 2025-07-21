@@ -27,11 +27,6 @@ func start(data: LevelData):
     EventBus.set_paddle_stats.emit(false, data.enemy_stats)
     EventBus.paddle_hp_changed.connect(_on_paddle_hp_changed)
 
-    # TODO: remove after testing
-    await get_tree().create_timer(30).timeout
-
-    EventBus.paddle_hp_changed.emit(false, 0)
-
 
 func _on_paddle_hp_changed(is_player: bool, hp: float) -> void:
     if !is_player && hp <= 0:
