@@ -8,15 +8,16 @@ var sfx_ping = preload("res://assets/sound_fx/score_increase.wav")
 var sfx_map = {
     # score-related
     "score_trail_animation_start": sfx_ping
-    # paddle-related
-    # menu-related
 }
 
-var music_menu = preload("res://assets/music/METROPOLIS.ogg")
+var music_menu = preload("res://assets/music/omnipong_menu_music.mp3")
+var music_game_level = preload("res://assets/music/METROPOLIS.ogg")
 
 var music_map = {
     # menu-related
-    "main_menu_start": music_menu
+    "main_menu_start": music_menu,
+    # game-level-related
+    "main_menu_play_button_clicked": music_game_level
 }
 
 
