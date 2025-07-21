@@ -8,6 +8,8 @@ extends Node2D
 @export var acceleration: float = 100.0
 @export var vertical_wall_margin: float = 100.0
 
+@onready var sprite: Sprite2D = $Sprite2D
+
 var controller: PaddleController
 var velocity: float
 var lock_rotation: bool = false
@@ -30,6 +32,10 @@ func _ready() -> void:
     EventBus.set_paddle_speed.connect(on_set_paddle_speed)
     EventBus.change_paddle_speed.connect(on_change_paddle_speed)
     EventBus.lock_paddle_rotation_speed.connect(on_lock_paddle_rotation)
+    EventBus.set_paddle_texture.connect(on_set_paddle_texture)
+
+    hide()
+    show.call_deferred()
 
 
 func _physics_process(delta: float) -> void:
@@ -114,3 +120,8 @@ func on_lock_paddle_rotation(player: bool, lock: bool):
 func on_change_paddle_rotation_speed(player: bool, speed_delta: float):
     if is_player == player:
         rotation_speed += speed_delta
+
+
+func on_set_paddle_texture(player: bool, texture: Texture2D):
+    if is_player == player:
+        sprite.texture = texture

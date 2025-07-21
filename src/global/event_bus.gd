@@ -103,4 +103,5 @@ signal campaign_state_changed(
 signal campaign_level_state_changed(
     data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE
 )
+signal set_paddle_texture(is_player: bool, texture: Texture2D)
 #endregion
