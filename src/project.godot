@@ -28,7 +28,7 @@ DSP/dsp_buffer_count=4
 
 [application]
 
-config/name="Pong-Test-Run"
+config/name="OmniPong (by 100 Devs 1 Game)"
 run/main_scene="uid://j5fhhicrymj4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
