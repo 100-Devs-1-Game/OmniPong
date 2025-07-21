@@ -2,6 +2,8 @@ extends Node
 # Storage for all data_holders
 # Doesn't do anything else
 
+var enemy_data: EnemyData
+
 #region ------------------------ PRIVATE VARS ----------------------------------
 
 var _player_data_holder: PlayerDataHolder

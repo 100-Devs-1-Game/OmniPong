@@ -1,10 +1,14 @@
 class_name AIPaddleController extends PaddleController
 
+@export var random_stop_probability_per_sec: float = 0.1
+
 var current_ball_pos: Vector2
 var current_ball_vel: Vector2
 
 var current_ai_paddle_pos: Vector2
 var current_ai_paddle_rot: float
+
+var random_stop_cooldown: Timer
 
 
 func _ready():
@@ -12,6 +16,16 @@ func _ready():
     EventBus.updated_ball_velocity.connect(on_ball_velocity_update)
     EventBus.updated_opponent_paddle_position.connect(on_ai_paddle_position_update)
     EventBus.updated_opponent_paddle_rotation.connect(on_ai_paddle_rotation_update)
+
+    random_stop_cooldown = Timer.new()
+    random_stop_cooldown.one_shot = true
+    random_stop_cooldown.autostart = false
+    add_child(random_stop_cooldown)
+
+
+func _physics_process(delta: float) -> void:
+    if randf() < random_stop_probability_per_sec * delta:
+        random_stop_cooldown.start()
 
 
 func on_ball_position_update(pos: Vector2):
@@ -31,6 +45,9 @@ func on_ai_paddle_rotation_update(rot: float):
 
 
 func get_vertical_input() -> float:
+    if not random_stop_cooldown.is_stopped():
+        return 0.0
+
     var pos_difference: Vector2 = current_ai_paddle_pos - current_ball_pos
     var unit_distance: float = pos_difference.x / current_ball_vel.x
     if unit_distance < 0:

@@ -63,7 +63,7 @@ func _update_score_labels(left: int, right: int) -> void:
 func _play_score_animation(
     from_position: Vector2, to_position: Vector2, left: int, right: int
 ) -> void:
-    var effect_scene = preload("res://modules/ui/score/score_effect.tscn").instantiate()
+    var effect_scene = preload("res://modules/UI/score/score_effect.tscn").instantiate()
     self.add_child(effect_scene)
     effect_scene.scale = self.scale
     effect_scene.left = left

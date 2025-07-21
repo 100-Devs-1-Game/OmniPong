@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbucadc6wdrdp"]
+
+[ext_resource type="PackedScene" uid="uid://nifluqa8by24" path="res://modules/UI/healthbar/healthbar.tscn" id="1_olx81"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="Healthbar" parent="." instance=ExtResource("1_olx81")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.658824)

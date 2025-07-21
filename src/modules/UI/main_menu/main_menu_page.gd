@@ -10,6 +10,7 @@ func _ready() -> void:
     $CenterContainer/VBoxContainer/PlayButton.connect("pressed", _on_play_button_down)
     $CenterContainer/VBoxContainer/PlayCampaignButton.connect("pressed", _on_campaign_button_down)
     $CenterContainer/VBoxContainer/SettingsButton.connect("pressed", _on_settings_button_down)
+    EventBus.emit_signal("main_menu_start")
 
 
 func _on_play_button_down():
@@ -35,3 +36,15 @@ func scene_change(scene_to_change: PackedScene) -> void:
         get_tree().change_scene_to_packed(scene_to_change)
     else:
         print("Scene not set")
+
+
+func _on_play_button_mouse_entered() -> void:
+    EventBus.emit_signal("main_menu_any_button_hover")
+
+
+func _on_play_campaign_button_mouse_entered() -> void:
+    EventBus.emit_signal("main_menu_any_button_hover")
+
+
+func _on_settings_button_mouse_entered() -> void:
+    EventBus.emit_signal("main_menu_any_button_hover")

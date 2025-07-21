@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdji1mqcercd2"]
+
+[ext_resource type="Script" uid="uid://k0l2nmtyoqeh" path="res://modules/campaign/levels/level.gd" id="1_sehrb"]
+
+[sub_resource type="Gradient" id="Gradient_h4jlg"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pguw3"]
+gradient = SubResource("Gradient_h4jlg")
+width = 1920
+height = 1080
+
+[node name="Lost" type="Node2D"]
+script = ExtResource("1_sehrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0745394, 0.130473, 0.16351, 1)
+z_index = -100
+texture = SubResource("GradientTexture2D_pguw3")
+offset = Vector2(256, 256)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_top = 241.0
+offset_right = 174.0
+offset_bottom = 358.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 41
+text = "you winnnnnnnnnn"

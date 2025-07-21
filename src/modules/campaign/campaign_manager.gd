@@ -44,6 +44,7 @@ func start():
         return
 
     _current_level_data = null
+    _current_level = null
     _current_level_state = LEVEL_STATE.INVALID
 
     _change_campaign_state(CAMPAIGN_STATE.ACTIVE)
@@ -57,6 +58,7 @@ func next_level():
 var _campaign_state: CAMPAIGN_STATE = CAMPAIGN_STATE.INVALID
 
 var _current_level_state: LEVEL_STATE = LEVEL_STATE.INVALID
+var _current_level: Level
 var _current_level_data: LevelData
 
 # Key is the path to the LevelData
@@ -71,10 +73,46 @@ func _enter_tree() -> void:
 
     _load_data(level_data_directory)
 
+    EventBus.ball_exited_screen.connect(_on_ball_exited_screen)
+
+
+func _on_ball_exited_screen(right_side: bool, speed: float) -> void:
+    print(speed)
+    if right_side:
+        var new_hp := DataWarehouse.enemy_data.hp - speed * 0.01
+        DataWarehouse.enemy_data.hp = new_hp
+        Logger.verbose("enemy hp is now %f" % new_hp)
+    else:
+        var new_hp := DataWarehouse.get_player_data_holder().take_damage(speed * 0.01)
+        Logger.verbose("player hp is now %f" % new_hp)
+        if new_hp <= 0:
+            _change_campaign_state(CAMPAIGN_STATE.INACTIVE_LOST)
+            _change_level_state(LEVEL_STATE.INVALID)
+            _change_level_node(preload("res://modules/campaign/levels/lost.tscn"))
+
+    update_healthbar()
+
+
+func update_healthbar() -> void:
+    var enemy_hp = DataWarehouse.enemy_data.hp
+    var enemy_maxhp = DataWarehouse.enemy_data.max_hp
+    var player_hp = DataWarehouse.get_player_data_holder().get_hp()
+    var player_maxhp = DataWarehouse.get_player_data_holder().get_maxhp()
+
+    var enemy_hp_perc = 0
+    if enemy_hp > 0:
+        enemy_hp_perc = enemy_hp / enemy_maxhp
+
+    var player_hp_perc = 0
+    if player_hp > 0:
+        player_hp_perc = player_hp / player_maxhp
+
+    EventBus.ui_set_healthbar.emit(player_hp_perc * 100.0, enemy_hp_perc * 100.0)
+
 
 func _ready():
     if autostart:
-        start()
+        start.call_deferred()  #idk, otherwise the enemy paddle spawns... on the player??
 
 
 func _exit_tree() -> void:
@@ -110,6 +148,7 @@ func _change_level_state(new: LEVEL_STATE) -> void:
         ),
         logmod
     )
+
     EventBus.campaign_level_state_changed.emit(_current_level_data, old, new)
 
 
@@ -142,18 +181,22 @@ func _next_level() -> void:
         Logger.verbose("Campaign won!", logmod)
         return
 
-    _change_level_state(LEVEL_STATE.STARTED)
-
 
 func _change_level_node(new_level: PackedScene):
     for child in level_container.get_children():
         child.queue_free()
 
     # we don't want both levels existing on the same frame, so wait until the queue_free deletes the old one
-    await get_tree().process_frame
+    # TODO: had to disable this because there would be a blank frame on level change? idk why
+    # add it back when/if we have levl changing transitions etc.
+    #await get_tree().process_frame
 
-    var new_level_node = new_level.instantiate()
-    level_container.add_child(new_level_node)
+    _current_level = new_level.instantiate() as Level
+    level_container.add_child(_current_level)
+    _current_level.start(_current_level_data)
+    _change_level_state(LEVEL_STATE.STARTED)
+
+    update_healthbar()
 
 
 func _load_data(directory_path: StringName) -> void:
