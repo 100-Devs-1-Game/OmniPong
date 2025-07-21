@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3a7m8ym8l0vk"
-path="res://.godot/imported/gold_paddle.webp-65025049cded6762763b5a046140fac0.ctex"
+uid="uid://tbtyr87sedre"
+path="res://.godot/imported/gold_paddle.webp-b0ed3a76370994e9ac639de63e01b522.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/gold_paddle.webp"
-dest_files=["res://.godot/imported/gold_paddle.webp-65025049cded6762763b5a046140fac0.ctex"]
+source_file="res://assets/textures/paddles/gold_paddle.webp"
+dest_files=["res://.godot/imported/gold_paddle.webp-b0ed3a76370994e9ac639de63e01b522.ctex"]
 
 [params]
 

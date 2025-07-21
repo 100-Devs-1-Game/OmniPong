@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxvc6c6dxg0rq"]
+
+[ext_resource type="Script" uid="uid://k0l2nmtyoqeh" path="res://modules/campaign/levels/level.gd" id="1_pguw3"]
+
+[sub_resource type="Gradient" id="Gradient_h4jlg"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pguw3"]
+gradient = SubResource("Gradient_h4jlg")
+width = 1920
+height = 1080
+
+[node name="Lost" type="Node2D"]
+script = ExtResource("1_pguw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.137178, 0.094504, 0.102024, 1)
+z_index = -100
+texture = SubResource("GradientTexture2D_pguw3")
+offset = Vector2(256, 256)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 203.0
+offset_right = 138.0
+offset_bottom = 320.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 41
+text = "You lost :("

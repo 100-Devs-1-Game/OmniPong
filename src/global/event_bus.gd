@@ -33,8 +33,8 @@ signal ui_hide_score
 #Show thr Score UI
 @warning_ignore("UNUSED_SIGNAL")
 signal ui_show_score
-@warning_ignore("UNUSED_SIGNAL")
-signal ui_set_healthbar(left: int, right: int)
+
+signal ui_set_healthbar(left: float, right: float)
 @warning_ignore("UNUSED_SIGNAL")
 signal ui_hide_healthbar
 @warning_ignore("UNUSED_SIGNAL")
@@ -58,6 +58,12 @@ signal main_menu_settings_button_clicked
 @warning_ignore("UNUSED_SIGNAL")
 signal player_leveled_up(new_level: float)
 #endregion
+
+#region stats
+#TODO: I have no idea, whatever works, replace this with whatever other people are making
+signal paddle_hp_changed(is_player: bool, hp: float)
+signal set_paddle_stats(is_player: bool, stats: PaddleStatsData)
+#endregion stats
 
 #region physics
 @warning_ignore("UNUSED_SIGNAL")
@@ -99,6 +105,13 @@ signal set_paddle_rotation_speed(is_player: bool, rotation_speed: float)
 signal change_paddle_rotation_speed(is_player: bool, rotation_speed_delta: float)
 @warning_ignore("UNUSED_SIGNAL")
 signal lock_paddle_rotation_speed(is_player: bool, lock: bool)
+
+signal set_paddle_hit_strength_multiplier(is_player: bool, multiplier: float)  # affects how fast the ball moves when hit by this specific paddle
+signal set_paddle_movement_speed_multiplier(is_player: bool, multiplier: float)
+signal set_paddle_rotation_speed_multiplier(is_player: bool, multiplier: float)
+signal set_paddle_size_multiplier(is_player: bool, multiplier: float)
+signal set_paddle_texture(is_player: bool, texture: Texture2D)
+
 #endregion
 
 #region gamemanager
@@ -124,6 +137,4 @@ signal campaign_state_changed(
 signal campaign_level_state_changed(
     data: LevelData, old: CampaignManager.LEVEL_STATE, new: CampaignManager.LEVEL_STATE
 )
-@warning_ignore("UNUSED_SIGNAL")
-signal set_paddle_texture(is_player: bool, texture: Texture2D)
 #endregion

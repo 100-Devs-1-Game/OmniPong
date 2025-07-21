@@ -1,7 +1,7 @@
 extends Node
 
-var r_health: int = 100
-var l_health: int = 100
+var r_health: float = 100
+var l_health: float = 100
 var show_health: bool = true
 
 

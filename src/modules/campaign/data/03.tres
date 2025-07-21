@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3 uid="uid://cdyfg0u2cc6xu"]
+
+[ext_resource type="Script" uid="uid://duxg38v3nkyei" path="res://modules/campaign/paddle_stats_data.gd" id="1_x6785"]
+[ext_resource type="PackedScene" uid="uid://ch5682ldmaxgs" path="res://modules/campaign/levels/level_03.tscn" id="2_aoxrd"]
+[ext_resource type="Texture2D" uid="uid://i2t5ka62h524" path="res://assets/textures/paddles/paddle_01.webp" id="2_pv3ra"]
+[ext_resource type="Script" uid="uid://bmydurrwqpdli" path="res://modules/campaign/level_data.gd" id="2_s8s5w"]
+
+[sub_resource type="Resource" id="Resource_pv3ra"]
+script = ExtResource("1_x6785")
+hp_max = 10.0
+hp_regen_persecond = 1.0
+hit_strength_multiplier = 3.0
+size_multiplier = 1.0
+movement_speed_multiplier = 1.4
+rotation_speed_multiplier = 1.4
+metadata/_custom_type_script = "uid://duxg38v3nkyei"
+
+[resource]
+script = ExtResource("2_s8s5w")
+display_name = &"Level Three"
+scene = ExtResource("2_aoxrd")
+enemy_stats = SubResource("Resource_pv3ra")
+enemy_textures = Array[Texture2D]([ExtResource("2_pv3ra")])
+metadata/_custom_type_script = "uid://bmydurrwqpdli"

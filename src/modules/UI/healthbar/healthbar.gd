@@ -16,10 +16,10 @@ func ui_show_healthbar() -> void:
     self.show()
 
 
-func ui_set_healthbar(left: int, right: int) -> void:
+func ui_set_healthbar(left: float, right: float) -> void:
     _update_healthbar_value(left, right)
 
 
-func _update_healthbar_value(left: int, right: int) -> void:
+func _update_healthbar_value(left: float, right: float) -> void:
     ($Left as TextureProgressBar).value = left
     ($Right as TextureProgressBar).value = right

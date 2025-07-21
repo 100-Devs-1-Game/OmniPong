@@ -5,11 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://o7q73imxehoi" path="res://modules/UI/healthbar/assets/HealthBar.png" id="2_orcw4"]
 
 [node name="Healthbar" type="Control"]
+modulate = Color(1, 1, 1, 0.658824)
 layout_mode = 3
 anchor_right = 1.0
-anchor_bottom = 0.106
+anchor_bottom = 0.995
 offset_bottom = -0.480003
 grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("1_orcw4")
 
 [node name="Left" type="TextureProgressBar" parent="."]
@@ -18,9 +20,9 @@ anchors_preset = -1
 anchor_right = 1.0
 offset_left = 22.0
 offset_top = 16.0
-offset_right = -782.0
+offset_right = -14.0
 offset_bottom = 151.0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 value = 100.0
 texture_under = ExtResource("1_intad")
 texture_progress = ExtResource("2_orcw4")
@@ -35,7 +37,7 @@ offset_top = 16.0
 offset_right = 1100.0
 offset_bottom = 151.0
 grow_horizontal = 0
-scale = Vector2(-0.5, 0.5)
+scale = Vector2(-0.4, 0.4)
 value = 100.0
 texture_under = ExtResource("1_intad")
 texture_progress = ExtResource("2_orcw4")
