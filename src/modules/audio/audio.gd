@@ -3,10 +3,9 @@ extends Node
 @onready var sfx_player: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 @onready var music_player: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 
-var sfx_ping = preload("res://assets/sound_fx/score_increase.wav")
-
 var sfx_map = {
     # score-related
+    "ui_set_healthbar": preload("res://assets/sound_fx/score_increase.wav"),
     "score_trail_animation_start": preload("res://assets/sound_fx/score_increase.wav"),
     # menu-related
     "main_menu_any_button_hover": preload("res://assets/sound_fx/ui_hover.wav"),
@@ -15,14 +14,11 @@ var sfx_map = {
     "ball_exited_screen": preload("res://assets/sound_fx/SOUND_000013.wav")
 }
 
-var music_menu = preload("res://assets/music/omnipong_menu_music.mp3")
-var music_game_level = preload("res://assets/music/METROPOLIS.ogg")
-
 var music_map = {
     # menu-related
-    "main_menu_start": music_menu,
+    "main_menu_start": preload("res://assets/music/omnipong_menu_music.mp3"),
     # game-level-related
-    "main_menu_play_button_clicked": music_game_level
+    "main_menu_play_button_clicked": preload("res://assets/music/METROPOLIS.ogg")
 }
 
 
