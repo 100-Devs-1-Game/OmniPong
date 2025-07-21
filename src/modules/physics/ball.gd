@@ -39,4 +39,4 @@ func get_speed_ratio() -> float:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-    EventBus.ball_exited_screen.emit(velocity.x > 0)
+    EventBus.ball_exited_screen.emit(velocity.x > 0, velocity.length())
