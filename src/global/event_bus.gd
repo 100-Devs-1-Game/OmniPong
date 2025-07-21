@@ -43,6 +43,8 @@ signal ui_show_healthbar
 @warning_ignore("UNUSED_SIGNAL")
 signal main_menu_start
 @warning_ignore("UNUSED_SIGNAL")
+signal main_menu_any_button_hover
+@warning_ignore("UNUSED_SIGNAL")
 signal main_menu_play_button_clicked
 @warning_ignore("UNUSED_SIGNAL")
 signal main_menu_campaign_play_button_clicked

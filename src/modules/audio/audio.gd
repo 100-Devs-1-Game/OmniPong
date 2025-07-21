@@ -7,7 +7,12 @@ var sfx_ping = preload("res://assets/sound_fx/score_increase.wav")
 
 var sfx_map = {
     # score-related
-    "score_trail_animation_start": sfx_ping
+    "score_trail_animation_start": preload("res://assets/sound_fx/score_increase.wav"),
+    # menu-related
+    "main_menu_any_button_hover": preload("res://assets/sound_fx/ui_hover.wav"),
+    "main_menu_play_button_clicked": preload("res://assets/sound_fx/ui_select.wav"),
+    # arena-related
+    "ball_exited_screen": preload("res://assets/sound_fx/SOUND_000013.wav")
 }
 
 var music_menu = preload("res://assets/music/omnipong_menu_music.mp3")
