@@ -26,6 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v3
+    - uses: Scony/godot-gdscript-toolkit@master
     - uses: pre-commit/action@v3.0.1
 
   # This workflow contains a single job called "build"
