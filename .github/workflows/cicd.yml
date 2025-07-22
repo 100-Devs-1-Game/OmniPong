@@ -20,6 +20,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+    - uses: pre-commit/action@v3.0.1
+
   # This workflow contains a single job called "build"
   build-game:
     # The type of runner that the job will run on
@@ -34,12 +42,7 @@ jobs:
       - name: Checkout LFS objects
         run: git lfs pull
 
-      - name: gdlint and gdformat install
-        uses: Scony/godot-gdscript-toolkit@master
 
-      - name: Run gdformat cheks
-        run: gdformat --check src/
-      - name: Run gdlint checks
       - name: unit tests with godot gut
         if: ${{ !env.is_release }}
         uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
