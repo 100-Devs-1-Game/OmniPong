@@ -36,7 +36,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*res://global/event_bus.gd"
-FmodManager="*res://addons/fmod/FmodManager.gd"
 Logger="*res://addons/godot-logger/logger.gd"
 DataWarehouse="*res://global/data_warehouse.gd"
 Audio="*res://modules/audio/audio.gd"
@@ -53,7 +52,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/format_on_save/plugin.cfg")
+enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/format_on_save/plugin.cfg")
 
 [gui]
 
